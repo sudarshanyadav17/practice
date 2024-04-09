@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    table {
+      width: 25%;
+    }
+    th,
+    td {
+      padding: 5px;
+    }
+  </style>
+  <head>
+    <title>Assignment 2.6</title>
+  </head>
+
+  <h1 style="text-align: left">Nested Tables</h1>
+  <body>
+    <table border="2px">
+      <tr>
+        <th>Header column 1</th>
+        <th>Header column 2</th>
+        <th>Header column 3</th>
+        <th>Header column 4</th>
+      </tr>
+      <tr>
+        <td>Row-2 Item 1</td>
+        <td>Row-2 Item 2</td>
+        <td>
+          <table border="2px">
+            Row 2: Nested Table 1
+            <tr>
+              <th>Row 1 Header</th>
+              <td>item</td>
+            </tr>
+            <tr>
+              <th>Row 2 Header</th>
+              <td>item</td>
+            </tr>
+            <tr>
+              <th>Row 3 Header</th>
+              <td>item</td>
+            </tr>
+          </table>
+        </td>
+        <td>Row 2 item 4</td>
+      </tr>
+    </table>
+    <tr></tr>
+  </body>
+</html>

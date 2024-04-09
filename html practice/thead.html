@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      thead {
+        background: #87ceea;
+        text-align: center;
+        
+      }
+      tfoot {
+        background: #ffc0cb;
+        text-align: center;
+      }
+      tbody {
+        text-align: center;
+      }
+      div {
+        min-height: 150px;
+        width: 75%;
+        margin: auto;
+        padding: 15px;
+        text-align: center;
+      }
+      .inner_div{
+        margin-top: 15px;
+      }
+      p {
+        display: inline;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 style="font-size: 25px;">Add New Item</h1>
+      <p><input type="text" placeholder="Item Name" /></p>
+      <p><input type="number" placeholder="Item Price" /></p>
+      <p><input type="number" placeholder="Item Qty" /></p>
+      <p><button type="button">Save</button></p>
+      <h1 style="font-size:20px; margin: 15px;">Item List</h1>
+      <table align="center" cellpadding="15" style="margin-top: 15px;width: 100%;">
+        <thead >
+          <tr>
+            <th >Sl No</th>
+            <th >Item Name</th>
+            <th >Price</th>
+            <th >Quantity</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Sl No</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td >Apple</td>
+            <td >Rs.250kg</td>
+            <td >2kg</td>
+            <td><input type="button" value="Edit" /></td>
+            <td><input type="button" value="Delete" /></td>
+          </tr>
+          <tr>
+            <td >02</td>
+            <td>Mango</td>
+            <td>Rs.100kg</td>
+            <td>4kg</td>
+            <td><input type="button" value="Edit" /></td>
+            <td ><input type="button" value="Delete" /></td>
+          </tr>
+          <tr>
+            <td >03</td>
+            <td >Orange</td>
+            <td >Rs.120kg</td>
+            <td >5kg</td>
+            <td > <input type="button" value="Edit" /></td>
+            <td ><input type="button" value="Delete" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="inner_div">
+      <p><button type="button">First</button></p>
+      <p><button type="button">1</button></p>
+      <p><button type="button">2</button></p>
+      <p><button type="button">3</button></p>
+      <p><button type="button">4</button></p>
+      <p><button type="button">5</button></p>
+      <p><button type="button">Last</button></p>
+    </div>
+    </div>
+  </body>
+</html>

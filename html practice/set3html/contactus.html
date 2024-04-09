@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .outer{
+        text-align: center;
+        background-color: #87ceea;
+        height: 450px;
+        width: 50%;
+        margin: auto;
+    }
+    .inner{
+        background-color: #90ee90;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    .gp{
+        padding: 15px;
+    }
+    
+  </style>
+  <body>
+    <div class="outer">
+      <h1 style="padding-top:25px;font-size: 25px;"align="center">Contact Us</h1>
+      <div class="inner">
+        <table align="center" cellpadding="10">
+          <tr>
+            <th>Name</th>
+            <td><input type="text" size="15" placeholder="Enter Name" /></td>
+            <th>Mobile</th>
+            <td>
+              <input type="number" size="15" placeholder="Enter Mobile" />
+            </td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>
+              <label for="cities"></label>
+              <select name="cities" id="cities">
+                <option value="choose city">Choose City</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Delhi">Delhi</option>
+              </select>
+            </td>
+            <th>Pincode</th>
+            <td>
+              <input type="number" size="20" placeholder="Enter Pincode" />
+            </td>
+          </tr>
+          <tr>
+            <th>Message</th>
+            <td colspan="5">
+              <textarea
+                cols="60"
+                rows="10"
+                placeholder="Enter Message"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+        <div class="gp"><button type="submit">Submit</button> <button type="reset">Reset</button></div>
+      </div>
+    </div>
+  </body>
+</html>

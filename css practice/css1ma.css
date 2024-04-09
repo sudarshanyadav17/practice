@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  margin: 20px auto 0px;
+  color: steelblue;
+}
+section {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 80%;
+  margin: auto;
+}
+.box-1,
+.box-2,
+.box-3,
+.box-4 {
+  height: 120px;
+  width: 75%;
+  margin: auto auto 10px;
+  background-color: #eeeeee;
+}
+.box-5,
+.box-6,
+.box-7,
+.box-8 {
+  height: 120px;
+  width: 75%;
+  margin: 10px auto auto;
+  background-color: #eeeeee;
+}
+
+.box-1 .txt-1,
+.box-2 .txt-2,
+.box-3 .txt-3,
+.box-4 .txt-4,
+.box-5 .txt-5,
+.box-6 .txt-6,
+.box-7 .txt-7,
+.box-8 .txt-8 {
+  text-align: center;
+  margin: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.box-1 .sym-1,
+.box-2 .sym-2,
+.box-3 .sym-3,
+.box-4 .sym-4,
+.box-5 .sym-5,
+.box-6 .sym-6,
+.box-7 .sym-7,
+.box-8 .sym-8 {
+  text-align: center;
+  margin: 10px auto 10px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.box-1 {
+    color: #861e66;
+}
+.box-2{
+    color: #0200fa;
+}
+.box-3{
+    color: #06870a;
+}
+.box-4{
+    color: #7e0200;
+}
+.box-5{
+    color: #3579b6;
+}
+.box-6{
+    color:#88d4ef ;
+}
+.box-7{
+    color:#010088 ;
+}
+.box-8{
+    color:#831e62 ;
+}

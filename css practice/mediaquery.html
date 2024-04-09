@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                background-color: darkcyan;
+
+            }
+            section{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                padding: 30px;
+            }
+            div{
+                color: red;
+                margin: 40px 0px 40px;
+                font-size: 30px;
+            }
+            @media screen and (min-width:1px) and (max-width:600px) {
+                section{
+                    
+                    grid-template-columns: auto auto !important;
+                    
+                }
+                div{font-size: 30px;color: green;}
+            }
+            @media screen and (min-width:600px) and (max-width:900px) {
+                section{
+                    
+                    grid-template-columns: auto auto auto !important;
+                    
+                }
+                div{font-size: 15px;color:indigo;}
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+        <div>Banglore</div>
+        <div>Vizag</div>
+        <div>Hubli</div>
+        <div>Rurkee</div>
+        <div>Madras</div>
+        <div>Hyderabad</div>
+        <div>Kolkata</div>
+        <div>Bengal</div>
+        <div>Banglore</div>
+        <div>Vizag</div>
+        <div>Hubli</div>
+        <div>Rurkee</div>
+        <div>Madras</div>
+        <div>Hyderabad</div>
+        <div>Kolkata</div>
+        <div>Bengal</div>
+    </section>
+    </body>
+</html>
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      div {
+        width: 100%;
+        height: 100%;
+       
+      }
+      section {
+        display: grid;
+        grid-template-rows: 15% 70% 15%;
+        row-gap: 15px;
+        height: 575px;
+        width: 100%;
+      }
+      .header,.footer{
+        padding-left: 25px;
+      }
+      .nav span,.article span,.ads span{
+        padding-top:25px;
+        padding-left: 25px;
+    
+      }
+      .nav,
+      .article,
+      .ads{
+        display: flex;
+      
+        align-items: flex-start;
+      }
+      .header,
+      .footer {
+        display: flex;
+        justify-content: normal;
+        align-items: center;
+      }
+      .outer {
+        display: grid;
+        grid-template-columns: 19% 63.75% 15%;
+        column-gap: 15px;
+        
+      }
+      .header,.footer,.nav,.ads,.article{
+        background-color: #ffd900;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="header"><span>Header</span></div>
+      <div class="outer">
+        <div class="nav"><span>Nav</span></div>
+        <div class="article"><span>Article</span></div>
+        <div class="ads"><span>Ads</span></div>
+      </div>
+      <div class="footer"><span>Footer</span></div>
+    </section>
+  </body>
+</html>

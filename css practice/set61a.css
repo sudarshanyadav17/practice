@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #34b1e7;
+}
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 450px;
+  width: 75%;
+  column-gap: 75px;
+  margin: 100px auto 100px;
+}
+.line-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 40px;
+  width: 80%;
+  border: 1px solid #34b1e7;
+}
+.txt-1 {
+  border-right: 1px solid #34b1e7;
+}
+.txt-2 {
+  background-color: #34b1e7;
+  color: white;
+}
+.txt-1,
+.txt-2 {
+  padding: 10px 50px 10px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.line-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100%;
+  background-color: #e4e4e4;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100%;
+  background-color: #e4e4e4;
+}
+.facebook,
+.gmail {
+  padding: 10px 50px 10px;
+  width: 90%;
+  text-align: center;
+}
+.facebook,
+.gmail {
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+.facebook {
+  background-color: #3d92d5;
+}
+.gmail {
+  background-color: #d5803d;
+}
+.fa-facebook-f,
+.fa-g {
+  font-size: 20px;
+  color: white;
+}
+.email,
+.password {
+  margin-bottom: 40px;
+  width: 80%;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #34b1e7;
+  background-color: #e4e4e4;
+}
+.but {
+  width: 80%;
+  margin-bottom: 40px;
+}
+button {
+  padding: 15px 50px 15px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #34b1e7;
+  background-color: #389ef0;
+  color: white;
+  font-weight: bold;
+}

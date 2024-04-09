@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  height: 550px;
+  width: 75%;
+  margin: 15px auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-1 {
+  position: relative;
+  height: 250px;
+  width: 30%;
+  border: 1px solid red;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-2 {
+  position: absolute;
+  height: 50%;
+  width: 80%;
+  z-index: 3;
+  background-color: blue;
+}
