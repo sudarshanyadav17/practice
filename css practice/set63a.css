@@ -3,12 +3,17 @@
     padding: 0;
     box-sizing: border-box;
   }
+  body{
+    background-color: #ebeef3;
+  }
   section{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height:480px;
+    height:500px;
     width: 60%;
     margin: 75px auto 75px;
+    background: linear-gradient(132deg,#44c9f6 35%,#ffffff 30%);
+    border-radius: 8px;
   }
 .left{
     display: flex;
@@ -24,7 +29,7 @@
     width: 60%;
     height: 17%;
     margin: 0px 0px 35px 35px;
-
+    color: white;
 }
 .line-1 span {
     width: 100%;
@@ -35,6 +40,7 @@
     width: 40%;
     font-size: 18px;
     margin: 0px 0px 35px 35px;
+    color: white;
 }
 .line-2 span,.line-3 span,.line-4 span{
     width: 100%;

@@ -11,7 +11,7 @@ body {
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 450px;
+  height: 480px;
   width: 75%;
   column-gap: 75px;
   margin: 100px auto 100px;
@@ -75,9 +75,11 @@ section {
   margin-right: 15px;
   margin-left: 15px;
   border-radius: 5px;
+
 }
 .facebook {
   background-color: #3d92d5;
+  
 }
 .gmail {
   background-color: #d5803d;
