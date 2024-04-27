@@ -21,7 +21,68 @@
       i{color: red !important;}
     </style>
     <script>
+      let formstatus = true;
+      const vaildateMe=()=>{
+        let fname= document.getElementById("fname");
+        if(fname.value == ""){
+            document.getElementById("fnameerror").innerText = "Invalid FirstName";
+            formstatus = false;
+        }else{
+          document.getElementById("fnameerror").innerText = "";
+        }
+      
+      let lname = document.getElementById("lname");
+      if(lname.value== ""){
+        let uname = document.getElementById("uname");
+        document.getElementById("lnameerror").innerText = "Invalid Last Name";
+        formstatus = false;
+      }else{
+        document.getElementById("lnameerror").innerText = "";
+      }
 
+      if(uname.value == ""){
+        document.getElementById("unameerror").innerText = "Invalid User Name";
+      }else{
+        document.getElementById("unameerror").innerText = "";
+      }
+
+      let epatern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      let email= document.getElementById("email");
+      if( !epatern.test(email.value)){
+        document.getElementById("emailerror").innerText = "Invalid Email";
+        formstatus = false;
+      }else{
+        document.getElementById("emailerror").innerText = "";
+        
+      }
+
+      let passsword = document.getElementById("password");
+      if(password.value == ""){
+        document.getElementById("passworderror").innerText = "Invalid Password ";
+        formstatus= false;
+      }else{
+        document.getElementById("passworderror").innerText = "";
+      }
+
+      let mpattern = /^[0]?[6789]\d{9}$/;
+      let mobile = document.getElementById("mobile");
+
+      if( !mpattern.test(mobile.value)){
+         document.getElementById("mobileerror").innerText = "Mobile No only 10 Digits";
+         formstatus = false;
+          }else{
+            document.getElementById("mobileerror").innerText = "";
+          }
+      
+      if (city.value == ""){
+        document.getElementById("cityerror").innerText = "Please Select City";
+        formstatus = false;
+      }else{
+        document.getElementById("cityerror").innerText = "";
+        let city=document.getElementById("city");
+      }
+        return formstatus;
+      }
     </script>
   </head>
   <body>
@@ -31,40 +92,43 @@
       <table align="center" cellpadding="10">
         <tr>
           <td>First Name<i>*</i> : </td>
-          <td><input type="text" size="20" id="fname" /><i id="container"></i></td>
+          <td><input type="text" size="20" id="fname" /><i id="fnameerror"></i></td>
         </tr>
         <tr>
           <td>Last Name<i>*</i> : </td>
-          <td><input type="text" size="20" id="lname"/><i id="container"></i></td>
+          <td><input type="text" size="20" id="lname"/><i id="lnameerror"></i></td>
         </tr>
         <tr>
           <td>User Name<i>*</i> :</td>
-          <td><input type="text" size="20" id="uname" /><i id="container"></i></td>
+          <td><input type="text" size="20" id="uname" /><i id="unameerror"></i></td>
         </tr>
         <tr>
           <td>Password<i>*</i> :</td>
-          <td><input type="password" size="20" id="passsword" /><i id="container"></i></td>
+          <td><input type="password" size="20" id="password" maxlength="10" /><i id="passworderror"></i></td>
         </tr>
         <tr>
           <td>Email<i>*</i> :</td>
-          <td><input type="email" size="20" id="email" /><i id="container"></i></td>
+          <td><input type="email" size="20" id="email" /><i id="emailerror"></i></td>
         </tr>
         <tr>
           <td>Mobile No <i>*</i> :</td>
-          <td><input type="number" size="20" id="mobile" /><i id="container"></i></td>
+          <td><input type="number" size="20" id="mobile" /><i id="mobileerror"></i></td>
         </tr>
-      </table>
-      <div>
-        <label for="cities">City<i>*</i>:</label>
-        <select name="cities" id="cities">
-          <option value="select">select</option>
+      
+      <tr>
+        <td>City<i>*</i>:</td>
+       
+        <td><select id="city">
+          <option value="">select</option>
           <option value="Bangalore">Bangalore</option>
           <option value="Mumbai">Mumbai</option>
           <option value="Hyderabad">Hyderabad</option>
           <option value="Delhi">Delhi</option>
         </select>
-        <i id="container"></i>
-      </div>
+        <i id="cityerror"></i>
+      </td>
+      </tr>
+    </table>
       <div class="last">
         <button class="button1" type="submit">Register</button> <a href="">Back to Home</a>
       </div>
