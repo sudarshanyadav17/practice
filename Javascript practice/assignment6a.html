@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="assignment6b.css">
+        <script>
+           let listitem=[
+            {number:"VEHICLE-1",type:"Small",root:"BUJURA",driver:"Akash Yadav",mobile:"7007932171"}
+           ]; 
+            const getItem=()=>{
+                let data="";
+                listitem.map((item,index)=>{
+                    data = data + "<tr>";
+                    data = data +"<td>"+ (index+1) + "</td>";
+                    data = data +"<td>" + item.number + "</td>";
+                    data = data +"<td>" + item.type +"</td>";
+                    data = data +"<td>" + item.root +"</td>";
+                    data = data +"<td>" + item.driver +"</td>";
+                    data = data +"<td>" + item.mobile +"</td>";
+                    data = data +"<td> <button onclick=delItem("+ index + ")>Delete</button></td>";
+                    data = data + "<td> <button onclick=editItem("+ index + ")>Edit</button></td>";
+                    data = data + "</tr>"
+                })
+                document.getElementById("container").innerHTML = data;
+            }
+            let itemindex=-1;
+            const editItem=( index )=>{
+                itemindex = index;
+                document.getElementById("tnumber").value=listitem[index].number;
+                document.getElementById("trname").value=listitem[index].root;
+                document.getElementById("tsize").value=listitem[index].type;
+                document.getElementById("tdname").value=listitem[index].driver;
+                document.getElementById("tdnumber").value=listitem[index].mobile;
+            }
+            const delItem=(index)=>{
+                let userinput=confirm(" Are You Sure Want To delete the Vehicle ");
+                if (userinput==true){
+                    let itemname=listitem[index].number;
+                    listitem.splice(index,1);
+                    getItem();
+                    document.getElementById("message").innerText =  itemname +  " - Vehicle Deleted Successfully !"
+                }
+            }
+            const save=()=>{
+                let tnumber=document.getElementById("tnumber").value;
+                let trname=document.getElementById("trname").value;
+                let tsize=document.getElementById("tsize").value;
+                let tdname=document.getElementById("tdname").value;
+                let tdnumber=document.getElementById("tdnumber").value;
+                
+                let iteminfo={number:tnumber,type:tsize,root:trname,driver:tdname,mobile:tdnumber};
+                if(listitem==true){
+                    listitem= listitem.concat(iteminfo);
+                    document.getElementById("message").innerText = tnumber + " - Vehicle Added Sucessfully !";
+                }else{
+                    listitem[itemindex] = iteminfo;
+                    itemindex = -1;
+                    document.getElementById("message").innerText = tnumber + " - Updated Sucessfully !";
+                }
+                getItem();
+                document.getElementById("tnumber").value="";
+                document.getElementById("trname").value="";
+                document.getElementById("tsize").value="";
+                document.getElementById("tdname").value="";
+                document.getElementById("tdnumber").value="";
+               
+            }
+        </script>
+    </head>
+    <body onload="getItem()">
+        <section>
+            <div class="left">
+                <div class="box">
+                    <div class="head"><span>New Transport</span></div>
+                    <div class="number">
+                    <div class="up"><span>Transport Number</span></div>    
+                        <input type="text" id="tnumber"/>
+                    </div> 
+                    
+                    <div class="rname">
+                        <div class="up"><span>Root Name</span></div>
+                        <input type="text" id="trname"/>
+                    </div>
+                    <div class="size">
+                        <div class="up"><label for="size">Size</label></span></div>
+                        <select name="size" id="tsize">
+                            <option value="Choose">Choose</option>
+                            <option value="Small">Small</option>
+                            <option value="Large">Large</option>
+                            <option value="Heavy">Heavy</option>
+                        </select>
+                        </div>
+                     <div class="dname">
+                            <div class="up"><span>Driver Name</span></div>
+                            <input type="text" id="tdname">
+                        </div>
+                    <div class="dnumber">
+                            <div class="up"> <span>Driver Mobile No</span></div>
+                            <input type="number" id="tdnumber">
+                        </div>
+                    <div class="but">
+                            <button onclick="save()">Save</button>
+                        </div>
+                    </div>
+                    
+                </div> 
+            </div>
+            <div class="right" align="center">
+                <h1 align="center"> JavaScript Assignment 6 </h1>
+                <p id="message"></p>
+                        <table align="center" width="98%" cellpadding="20" border="1" cellspacing="0">
+                            <thead>
+                               <tr>
+                                 <th>T-ID</th>
+                                <th>T-Number</th>
+                                <th>Type</th>
+                                <th>Transport Root</th>
+                                <th>Driver</th>
+                                <th>Mobile No</th>
+                                <th>Delete</th>
+                                <th>Edit</th>
+                            </tr>
+                            </thead>
+                            <tbody id="container">
+                               
+
+                            </tbody>
+ 
+                        </table>
+                    
+            </div> 
+        </section>
+    </body>
+</html>

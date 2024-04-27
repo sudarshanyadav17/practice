@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .head{
+                display: flex;
+                flex-direction:row ;
+                align-items: center;
+                justify-content: center;
+                width: 92%;
+            }
+            .head .middle{
+                margin:auto 50px auto  ;
+            }
+            #message{
+                font-size: 20px;
+            }
+            table{
+                font-size: 18px;
+            }
+            input[type="text"]{
+                padding: 5px 20px 5px;
+            }
+            .save{
+                padding: 5px 15px 5px;
+                font-size: 15px;
+            }
+            </style>
+        <script>
+            
+            let companylist=[];
+            const geton=(keyword="")=>{
+                let data="";
+               companylist.map((companyname,index)=>{
+                if(companyname.toLowerCase().match(keyword.toLowerCase())){
+                data = data + "<tr>";
+                data = data +"<td>"+(index+1)+"</td>";
+                data = data + "<td>" + companyname + "</td>";
+                data = data + "<td>"+ companyname.length + "</td>";
+                data = data + "<td> <button onclick= 'deldata(" + index + ")'>Delete</button> </td>";
+                data = data +"</tr>"
+                }
+               })
+                document.getElementById("container").innerHTML= data;    
+            }
+           
+            const save=()=>{
+                let newdata=document.getElementById("cname").value;
+                companylist.push(newdata);
+                document.getElementById("cname").value="";
+                document.getElementById("message").innerText="Item added Successfully !";
+                geton();    
+            }
+
+            const deldata=(index)=>{
+                companylist.splice(index,1);
+                document.getElementById("message").innerText=" Item deleted Successfully !"; 
+                geton();    
+            }
+        </script>
+    </head>
+    <body onload="geton()">
+        <h1 align="center"> JavaScript Assignment 5 </h1>
+       <div class="head" >
+        <p ><input type="text" placeholder=" Search "onkeyup="geton(this.value)"></p>
+        <p><input type="text" placeholder="Enter Company Name" id="cname" class="middle">
+        </p>
+        <p> <button class="save" onclick="save()">Save</button></p>
+       </div>
+       <p align="center" id="message"></p>
+       <table align="center" cellpadding="20" border="1" cellspacing="0" width="60%">
+        <thead>
+            <tr>
+                <th> Sl No</th>
+                <th> Company Name</th>
+                <th> Length</th>
+                <th> Action</th>
+            </tr>
+        </thead>
+        <tbody id="container">
+            
+        </tbody>
+    </table>
+    </body>
+</html>

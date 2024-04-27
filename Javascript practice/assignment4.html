@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #container {
+        width: 35%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      let namelist = [];
+      const geton = () => {
+        let temp = " ";
+        namelist.map((cityname, index) => {
+          temp =
+            temp +
+            "<p>" +
+            index +
+            "<br/>" +
+            cityname +
+            "<br/>" +
+            cityname.length +
+            " <br/> <button onclick='deldata(" +
+            index +
+            ")'>Delete</button>" + "<br/><button onclick='editdata(" +index+ ")'>Edit</button>"
+            "</p>";
+        });
+        document.getElementById("container").innerHTML = temp;
+        document.getElementById("cname").value = "";
+      };
+
+      const save = () => {
+        let cname = document.getElementById("cname").value;
+        // if(nameindex>=0){
+        //     namelist[index]=cname;
+        // }
+        namelist.push(cname);
+        geton();
+      };
+
+      const deldata = (index) => {
+        console.log(index);
+        namelist.splice(index,1);
+        geton();
+      };
+      let nameindex=-1;
+      const editdata =(index)=>{
+        nameindex=index;
+        document.getElementById("cname").value=namelist[index];
+      }
+    </script>
+  </head>
+  <body>
+    <h1 align="center">JavaScript Assignment 4</h1>
+    <p align="center">
+      <input type="text" id="cname" />
+      <button onclick="save()">Save</button>
+    </p>
+    <div id="container"></div>
+  </body>
+</html>

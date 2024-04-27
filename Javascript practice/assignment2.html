@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const one=()=>{
+
+            let username=document.getElementById("demo").value;
+
+            document.getElementById("print").innerText= username + " - " + "  " + username.length;
+        }
+        </script>
+        <style>
+            h1{
+                text-align: center;
+            }
+            p{
+                text-align: center;
+                margin-top: 50px ;
+            }
+            button{
+                margin-left: 15px;
+                padding: 5px 15px 5px;
+            }
+            input[type="text"]{
+                padding: 5px 10px 5px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1> Assignment 2 Javascript</h1>
+
+        <p><input type="text" id="demo" value="" onkeyup="one()">
+       
+        <p id="print"></p>
+    </body>
+</html>

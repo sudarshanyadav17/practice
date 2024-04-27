@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        #container{
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+    <script>
+         
+      const save = () => {
+        let cname = document.getElementById("cname").value;
+
+        cname = cname + "-" + cname.length + "<br/>";
+        document.getElementById("container").innerHTML =
+          document.getElementById("container").innerHTML + cname;
+          document.getElementById("cname").value="";
+        };
+   
+
+      
+
+    </script>
+  </head>
+  <body>
+    <h1 align="center">JavaScript Assignment 3</h1>
+    <p align="center">
+      <input type="text" id="cname" />
+      <button onclick="save()">Save</button>
+    </p>
+    <div id="container"></div>
+  </body>
+</html>

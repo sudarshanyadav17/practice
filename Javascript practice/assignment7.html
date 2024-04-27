@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .box{
+                border: 1px solid grey;
+                font-size: 18px ;
+            }
+            h1{
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .head{
+                padding: 15px 15px 15px ;
+                height: 50px;
+                border-bottom: 1px solid grey;
+                background-color: #ede3e2;
+                border-radius: 5px 5px 0px 0px;
+            }
+            .box{ 
+                height: 620px;
+                width: 60%;
+                margin: 10px auto 25px;
+                border-radius: 5px;
+            }
+            .inner{
+                display: grid;
+                grid-template-columns: 50% 50%;
+                margin: auto;
+                
+            }
+           .line-1,.line-4,.line-5,.line-6,.line-7,.line-8{
+                display: flex;
+                flex-direction: row;
+                width: 95%;
+                height: 50%;
+                margin: auto 15px 20px;
+            }
+            .h-2{
+                width:50%;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .h-2 span{
+                height: 100%;
+            }
+            .line-2{
+                margin:auto;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+            }
+            .line-3{
+                width: 96%;
+                margin:10px 15px 10px;
+            }
+            .line-3 textarea{
+                width: 100%;
+                margin-top: 10px;
+            }
+            input[type="text"],input[type="number"]{
+                padding: 12px 5px 12px;
+                width: 75%;
+                
+            }
+            #caste{
+                width: 78%;
+                padding: 0px 5px ;
+            }
+            
+            #parent,#proof{
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px 20px 10px;
+            }
+            .h-1{
+                width: 50%;
+            }
+            .but{
+                text-align: center;
+            }
+            .but-1,.but-2{
+                padding: 8px 15px 8px;
+                margin: 0px 10px 0px;
+                border-radius: 4px;
+            }
+            .but-1{
+                color: white;
+                background-color:#357ab6;
+                border: none;
+            }
+            .but-2{
+                color: white;
+                background-color: #edac4e;
+                border: none;
+            }
+            i{ color:red !important;}
+
+        </style>
+        <script>
+            const validateMe=()=>{
+                let formstatus = true;
+
+                let fathername= document.getElementById("fname");
+                if(fathername.value == ""){
+                    document.getElementById("ferror").innerText = "Invalid Father Name !";
+                    formstatus = false;
+                }else{
+                    document.getElementById("ferror").innerText = "";
+                }
+                //Mother Name validation
+                let mothername = document.getElementById("mname");
+                if(mothername.value == ""){
+                    document.getElementById("merror").innerText = "Invalid  Mother Name!";
+                    formstatus = false;
+                }else{
+                    document.getElementById("merror").innerText = "";
+                }
+
+                //Mobile No validation
+                let mpattern = /^[0]?[6789]\d{9}$/
+                let mobile = document.getElementById("mobile");
+                if (! mpattern.test(mobile.value)){
+                    document.getElementById("mobileerror").innerText = " Mobile No only 10 digits!";
+                    formstatus = false;
+                }else{
+                    
+                    document.getElementById("mobileerror").innerText="";
+                }
+                
+                //Religion validation
+                let religion = document.getElementById("mname");
+                if(religion.value == ""){
+                    document.getElementById("rerror").innerText = "Invalid Religion!";
+                    formstatus = false;
+                }else{
+                    document.getElementById("rerror").innerText = "";
+                }
+                document.getElementById("casteerror").innerText = "Invalid Caste!";
+
+                  //Caste validation
+                  let caste = document.getElementById("caste");
+                if(caste.value == ""){
+                    formstatus = false;
+                }else{
+                    document.getElementById("castererror").innerText = "";
+                }
+
+                 //Caste validation
+                 let anumber = document.getElementById("anumber");
+                if(anumber.value == ""){
+                    document.getElementById("aerror").innerText = "Invalid Aadhaar No!";
+                    formstatus = false;
+                }else{
+                    document.getElementById("aerror").innerText = "";
+                }
+
+                //Parent Occuptation validation
+                    let parent = document.getElementById("parent");
+                if(parent.value == ""){
+                    document.getElementById("parenterror").innerText = "Invalid Parent Occupation!";
+                    formstatus = false;
+                }else{
+                    document.getElementById("parenterror").innerText = "";
+                }
+
+                //Any Proof validation
+                     let proof = document.getElementById("proof");
+                if(proof.value == ""){
+                    document.getElementById("prooferror").innerText = "Invalid Proof No!";
+                    formstatus = false;
+                }else{
+                    document.getElementById("prooferror").innerText = "";
+                }
+                //Address Validation
+
+                let address = document.getElementById("address");
+                if(address.value == ""){
+                    document.getElementById("addresserror").innerText = "Invalid Address ! ";
+                    formstatus = false;
+                }else{
+                    document.getElementById("addresserror").innerText = "";
+                             
+                }
+
+                return formstatus;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>JavaScript Assignment 7 </h1>
+        <div align="center"><i> All The * Marked Feilds are Mandatory</i></div>
+        <form action="first.php" method="POST"onsubmit="return validateMe()">
+            <div class="box">
+                <div class="head"><span>Parent Details</span></div>
+                <div class="inner">
+                    <div class="line-1">
+                       <div class="h-1"> <span>Father Name<i>*</i></span></div>
+                       <input type="text" id="fname">
+                       <i id="ferror"></i>
+                    </div>
+                    <div class="line-4">
+                        <div class="h-1"> <span>Mother Name<i>*</i></span></div>
+                        <input type="text" id="mname">
+                        <i id="merror"></i>
+                     </div>
+                     <div class="line-5">
+                        <div class="h-1"> <span>Mobile No<i>*</i></span></div>
+                        <input type="number" id="mobile" maxlength="10">
+                        <i id="mobileerror"></i>
+                     </div>
+                     <div class="line-6">
+                        <div class="h-1"> <span>Aadhaar No<i>*</i></span></div>
+                        <input type="number" id="anumber">
+                        <i id="aerror"></i>
+                     </div>
+                     <div class="line-7">
+                        <div class="h-1"> <span>Religion<i>*</i></span></div>
+                        <input type="text" id="religion">
+                        <i id="rerror"></i>
+                     </div>
+                     <div class="line-8">
+                        <div class="h-1"><label for="Caste">Caste<i>*</i></label></span></div>
+                        <select  id="caste">
+                            <option value="">Choose</option>
+                            <option value="OC">OC</option>
+                            <option value="BC">BC</option>
+                            <option value="ST">ST</option>
+                            <option value="SC">SC</option>
+                        </select>
+                        <i id="casteerror"></i>
+                     </div>
+                    
+                </div>
+                <div class="line-2">
+                    <div class="h-2"> 
+                      <div class="p-1">  <span>Parent Occupation<i>*</i></span></div>
+                    <input type="text" id="parent">
+                    <i id="parenterror"></i>
+                </div>
+                <div class="h-2"> 
+                    <div class="p-1">  <span>Any Id Proof No<i>*</i></span></div>
+                  <input type="text" id="proof" maxlength="10">
+                  <i id="prooferror"></i>
+              </div>
+                 </div>
+                 <div class="line-3">
+                    <div class="p1"><span> Address</span><i>*</i></div>
+                    <textarea id="address" cols="30" rows="8"></textarea>
+                    <i id="addresserror"></i>
+                 </div>
+                 <div class="but">
+                    <button class="but-1" type="submit">Register</button>
+                    <button class="but-2" type="reset"> Clear All</button>
+                 </div>
+            </div>
+        </form>
+    </body>
+</html>

@@ -18,39 +18,44 @@
         border: 0;
         padding: 5px 25px 5px;
       }
+      i{color: red !important;}
     </style>
+    <script>
+
+    </script>
   </head>
   <body>
+    <form action="saveuser.php" method="POST" onsubmit="return vaildateMe()">
     <div class="outer-div">
       <h2>Registration Form</h2>
       <table align="center" cellpadding="10">
         <tr>
-          <td>First Name:</td>
-          <td><input type="text" size="20" /></td>
+          <td>First Name<i>*</i> : </td>
+          <td><input type="text" size="20" id="fname" /><i id="container"></i></td>
         </tr>
         <tr>
-          <td>Last Name:</td>
-          <td><input type="text" size="20" /></td>
+          <td>Last Name<i>*</i> : </td>
+          <td><input type="text" size="20" id="lname"/><i id="container"></i></td>
         </tr>
         <tr>
-          <td>User Name:</td>
-          <td><input type="text" size="20" /></td>
+          <td>User Name<i>*</i> :</td>
+          <td><input type="text" size="20" id="uname" /><i id="container"></i></td>
         </tr>
         <tr>
-          <td>Password:</td>
-          <td><input type="password" size="20" /></td>
+          <td>Password<i>*</i> :</td>
+          <td><input type="password" size="20" id="passsword" /><i id="container"></i></td>
         </tr>
         <tr>
-          <td>Email:</td>
-          <td><input type="email" size="20" /></td>
+          <td>Email<i>*</i> :</td>
+          <td><input type="email" size="20" id="email" /><i id="container"></i></td>
         </tr>
         <tr>
-          <td>Mobile No:</td>
-          <td><input type="number" size="20" /></td>
+          <td>Mobile No <i>*</i> :</td>
+          <td><input type="number" size="20" id="mobile" /><i id="container"></i></td>
         </tr>
       </table>
       <div>
-        <label for="cities">City:</label>
+        <label for="cities">City<i>*</i>:</label>
         <select name="cities" id="cities">
           <option value="select">select</option>
           <option value="Bangalore">Bangalore</option>
@@ -58,10 +63,12 @@
           <option value="Hyderabad">Hyderabad</option>
           <option value="Delhi">Delhi</option>
         </select>
+        <i id="container"></i>
       </div>
       <div class="last">
-        <button class="button1" type="sumbit">Register</button> <a href="">Back to Home</a>
+        <button class="button1" type="submit">Register</button> <a href="">Back to Home</a>
       </div>
     </div>
+  </form>
   </body>
 </html>

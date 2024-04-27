@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            section{
+                height: 500px;
+                width: 30%;
+                margin: 25px auto 25px;
+                font-weight: bold;
+            }
+            h1{
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .line-1,.input-1{
+                margin-top:12px;
+            
+            }
+            .input-1{
+                height: 35px;
+            }
+            input[type="text"],input[type="number"],input[type="email"],input[type="date"]{
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+            }
+            .but{
+                margin-top: 20px;
+                text-align: center;
+            }
+            .but-1,.but-2{
+                padding: 8px 15px 8px;
+                margin: 0px 10px 0px;
+                border-radius: 4px;
+            }
+            .but-1{
+                color: white;
+                background-color:#357ab6;
+                border: none;
+            }
+            .but-2{
+            color: white;
+                background-color: #edac4e;
+                border: none;
+            }
+            i{ color:red !important;}
+
+        </style>
+        <script>
+            const vaildateMe=()=> {
+
+                let formstatus = true;
+                //emp name validation
+                let empname = document.getElementById("empname");
+                if(empname.value == ""){
+                    document.getElementById("emperror").innerText = "Invalid Emp Name !";
+                    formstatus = false;
+                }else{
+                    document.getElementById("emperror").innerText = "";
+                }
+
+                
+                //Mobile No validation
+                let mpattern = /^[0]?[6789]\d{9}$/
+                let mobile = document.getElementById("mobile");
+                if (! mpattern.test(mobile.value)){
+                    document.getElementById("mobileerror").innerText = " Mobile No only 10 digits!";
+                    formstatus = false;
+                }else{
+                    
+                    document.getElementById("mobileerror").innerText="";
+                }
+
+                //email vaildation
+                let epatern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/ ;//from online first enquiry.com/blogs
+                // suresh.mca2023@gmail.com
+                let emailid = document.getElementById("email");
+                if (! epatern.test(emailid.value))
+                {
+                    document.getElementById("emailerror").innerText = "Invalid e-Mail Id !";
+                    formstatus = false;
+                }else{
+                    document.getElementById("emailerror").innerText = "";
+                }
+
+                  //emp salary validation
+                  let salary = document.getElementById("salary");
+                if(salary.value == ""){
+                    document.getElementById("salaryerror").innerText = "Invalid Emp Salary !";
+                    formstatus = false;
+                }else{
+                    document.getElementById("salaryerror").innerText = "";
+                }
+
+                 //emp salary validation
+                 let dept = document.getElementById("dept");
+                if(dept.value == ""){
+                    document.getElementById("depterror").innerText = "Invalid Emp Dept !";
+                    formstatus = false;
+                }else{
+                    document.getElementById("depterror").innerText = "";
+                }
+
+                 //date validation
+                 let date = document.getElementById("date");
+                if(date.value == ""){
+                    document.getElementById("dateerror").innerText = "Invalid Date !";
+                    formstatus = false;
+                }else{
+                    document.getElementById("dateerror").innerText = "";
+                }
+
+
+                return formstatus ;
+            }
+        </script>
+    </head>
+    <body>
+        <section>
+            <form action="save.php" method="POST" onsubmit="return vaildateMe() ">
+                <h1> JavaScript Assignment 8 </h1>
+                <h1> New Employee</h1>
+                <div align="center"><i> All The * Marked Feilds are Mandatory</i></div>
+                <div class="line-1"><Span>Emp Name</Span><i>*</i> <i id="emperror"></i></div>
+                
+               <div class="input-1"> <input type="text" id="empname"></i></div>
+               <div class="line-1"><Span>Emp Mobile </Span><i>*</i><i id="mobileerror"></i></div>
+               <div class="input-1"> <input type="text" id="mobile"></div>
+               <div class="line-1"><Span>Emp E-Mail </Span><i>*</i><i id="emailerror"></i></div>
+               <div class="input-1"> <input type="email" id="email"></div>
+               <div class="line-1"><Span>Emp Salary </Span><i>*</i><i id="salaryerror"></i></div>
+               <div class="input-1"> <input type="text" id="salary"></div>
+               <div class="line-1"><Span>Emp Dept</Span><i>*</i><i id="depterror"></i></div>
+               <div class="input-1"> <input type="text" id="dept"></div>
+               <div class="line-1"><Span>Emp Joining Date </Span><i>*</i><i id="dateerror"></i></div>
+               <div class="input-1"> <input type="date" id="date"></div>
+                <div class="but">
+                    <button class="but-1" type="submit"> Save Employee</button>
+                    <button class="but-2" type="reset"> Clear </button>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>
