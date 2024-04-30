@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            h1,h2{
+                text-align: center;
+                margin: 15px;
+            }
+            h3{
+                font-size: 20px;
+                margin: 10px;
+            }
+            body{
+                margin:25px 5% 25px;
+
+            }
+            .grid{
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                margin: 5px;
+            }
+            .but{
+                text-align: center;
+                margin-top: 15px;
+            }
+            .but button{
+                padding: 10px 25px 10px;
+                border: none;
+                background-color: blue;
+                color: white;
+                border-radius: 5px;
+            }
+            .box{
+                width: 90%;
+                text-align: center;
+                color: red;
+            }
+            .box span{
+                font-size: 18px;
+            }
+            #container-1,#container-2,#container-3,#container-4{
+                height: 200px;
+                width: 100%;
+                border: 1px solid black;
+               box-shadow: 7px 5px 14px;
+                border-radius: 5px;
+                margin-top: 15px;
+                color: black;
+                text-align: center;
+                padding: 10px;
+            }
+            .line{
+                text-align: center;
+                margin: 10px;
+                width: 90%;
+                font-size: 16px;
+            }
+        </style>
+        <script>
+            const getbook=()=>{
+                fetch('book.json')
+                .then(response=>response.json())
+                .then(bookArray=>{
+                    let temp="<h3> Book Details </h3>";
+                    bookArray.map((bookname,index)=>{
+                        temp = temp + "<p class='line'> Name :"+ " " + bookname.bookname+"</p>";
+                        temp =temp +"<p class='line'> qty : " + " "+ bookname.qty + "</p>";
+                        temp = temp + "<p class='line'> seller :" + " " + bookname.seller + "<p>";
+                    })
+                    document.getElementById("container-1").innerHTML = temp;
+                })
+            }
+            const getcompany=()=>{
+                fetch('company.json')
+                .then(response=>response.json())
+                .then(companyArray=>{
+                    let temp = "<h3> Company Details </h3>";
+                    companyArray.map((companyname,index)=>{
+                        temp = temp + "<p class='line'> Name :" + " "+ companyname.companyname + "</p>";
+                        temp = temp + "<p class='line'> Location :"+ " "+ companyname.location +"</p>";
+                        temp = temp + "<p class='line'> Branch :"+ " "+companyname.branch +"</p>"; 
+                    })
+                    document.getElementById("container-2").innerHTML = temp;
+                })
+            }
+
+            const getemp=()=>{
+                fetch('emp.json')
+                .then(respose=>respose.json())
+                .then(empArray=>{
+                    let temp = "<h3> Employee Details</h3> ";
+                    empArray.map((empname,index)=>{
+                        temp = temp + "<p class='line'> Emp Name :" +" " + empname.empname + "</p>";
+                        temp = temp +"<p class='line'> Salary :" +  " "+empname.salary + "</p>";
+                        temp = temp + "<p class='line'>Dept :" + " "+empname.dept + "</p>";
+                    })
+                    document.getElementById("container-3").innerHTML = temp;
+                })
+            }
+
+            const getuser=()=>{
+                fetch('user.json')
+                .then(response=>response.json())
+                .then(userArray=>{
+                    let temp ="<h3> User Details </h3>";
+                    userArray.map((username,index)=>{
+                        temp = temp + "<p class='line'> User : "+ " "+ username.user + "</p>";
+                        temp = temp + "<p class='line'> Gender : "+" " + username.gender + "</p>";
+                        temp = temp + "<p class='line'> Mail-id :" + " " + username.gmail + "</p>";
+                        temp = temp + "<p class='line'> Mobile No : "+ "" + username.mobile + "</p>";
+                    })
+                    document.getElementById("container-4").innerHTML = temp ;
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Javascript Assignment 10 </h1>
+        <h2>Reading the data from .json file</h2>
+        <div class="grid"> 
+        <div class="box">
+            <span> Data from book.json</span>
+        <div id="container-1">
+
+        </div>
+        <div class="but"><button onclick="getbook()"> Get Data </button></div>
+        </div>
+        <div class="box">
+            <span> Data from company.json</span>
+        <div id="container-2">
+
+        </div>
+        <div class="but"><button onclick="getcompany()"> Get Data </button></div>
+        </div>
+        <div class="box">
+            <span> Data from emp.json</span>
+        <div id="container-3">
+
+        </div>
+        <div class="but"><button onclick="getemp()"> Get Data </button></div>
+        </div>
+        <div class="box">
+            <span> Data from user.json</span>
+        <div id="container-4">
+
+        </div>
+        <div class="but"><button onclick="getuser()"> Get Data </button></div>
+        </div>
+    </div>
+    </body>
+</html>
