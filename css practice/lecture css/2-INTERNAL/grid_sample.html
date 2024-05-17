@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 95vh;
+        width: 100vw;
+      }
+
+      section {
+        display: grid;
+        grid-template-rows: 10% 80% 10%;
+        font-size: 30px;
+        width: 100%;
+        height: 100%;
+        row-gap: 15px;
+        /* background-color: green; */
+      }
+      .body-section {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 15px;
+        background-color: white;
+      }
+
+      div {
+        /* margin: 30px; */
+        background-color: green;
+        color: white;
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+
+      span {
+        margin: auto;
+      }
+
+      /* .header,
+      .body-section,
+      .sidebar,
+      .content,
+      .footer {
+        background-color: green;
+      } */
+    </style>
+  </head>
+  <body>
+    <section>
+      <div><span>Header</span></div>
+      <div class="body-section">
+        <div><span>SideBar</span></div>
+        <div><span>Content</span></div>
+      </div>
+      <div><span>Footer</span></div>
+    </section>
+  </body>
+</html>

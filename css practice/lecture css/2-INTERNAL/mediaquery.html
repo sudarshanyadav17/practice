@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin:0px;
+                background-color: darkcyan;
+            }
+            section{
+                padding:30px;
+                display:grid;
+                grid-template-columns: auto auto auto auto ;
+            }
+            div{
+                color:yellow;
+                font-size: 35px;
+                margin:40px 0px 40px;
+            }
+            /* media query start */
+
+            @media screen and (min-width:1px) and (max-width:600px){
+                section{
+                    grid-template-columns: auto !important;
+                }
+            }
+            
+            @media screen and (min-width:600px) and (max-width:900px){
+                section{
+                    grid-template-columns: auto auto !important;
+                }
+                div{ font-size: 28px;}
+            }
+            
+            @media screen and (min-width:900px) and (max-width:1200px){
+                section{
+                    grid-template-columns: auto auto auto!important;
+                }
+                div{font-size: 30px;}
+            }
+        </style>
+    </head>
+    <body>
+        
+            <section>
+                <div> Website Devlopment</div>
+                <div> Digital Marketing</div>
+                <div> Content Writing</div>
+                <div> Hire and Deploy</div>
+                 <div>Bangalore</div>
+                <div>Mumbai</div>
+                <div>Delhi</div>
+                <div>Chennia</div>
+                <div>Hyderabad</div>
+                <div>Vizag</div>
+                <div>Goa</div>
+                <div>Bhopal</div>
+            </section>
+        
+    </body>
+</html>

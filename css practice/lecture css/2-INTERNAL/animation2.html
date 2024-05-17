@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0px;
+                
+            }
+            @keyframes mybanner{
+                25%{ background-image:url(2.jpg);}
+                50%{ background-image:url(penguins_0.jpg);}
+                75%{ background-image:url(2.jpg);}
+
+            }
+            #banner{
+                background-image:url('2.jpg');
+                background-size: 100% 100%;
+                padding:150px 0px 150px ;
+                text-align: center;
+                font-size: 100px;
+                animation: mybanner;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                color: yellow;
+                height: 600px;
+            }
+            ul{
+                background-color: red;
+                margin: 0px;
+
+            }
+            ul li{
+                display:inline-block;
+                padding:20px 40px 20px;
+                color: white;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li> Home</li>
+            <li>About us</li>
+            <li>Contact Us</li>
+            <li>Login</li>
+            <li>Enquiry</li>
+        </ul>
+        <section id="banner">
+            CSS Animation...
+        </section>
+    </body>
+</html>
+

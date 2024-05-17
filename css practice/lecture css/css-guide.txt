@@ -1,0 +1,210 @@
+HTML - It has collections of pre-defined tags.
+    the html tags has limited property and values.
+    due to this limitation css is required.
+
+CSS - Cascading Style Sheet
+        it has collection of property and values.
+        css used to change look and feel of webpage by applying its property and values.
+
+How it work ?
+    Responsive webpage = html(tag) + CSS (property & values)
+
+Type of CSS ?
+    1. Inline CSS - easy to understand that how html and css work.
+    2. Internal CSS
+    3. External CSS
+
+=> Syntax in inline css
+    <tagname style="property1:value1; property2:value2">data to display</tagname>
+
+Example
+    <p style="color:red; background:skyblue; height:200px;"> Welcome to Web</p>
+
+in inline CSS 
+    -> it is one to one  - write css once and use only once.
+    -> due to 1 to 1 code duplicate will happen.
+    -> code modification may be complex.
+    -> heavy file take more time to load.
+    -> more disk space in server
+    -> it consume more internet data.
+    -> User experience will be bad .
+    -.google search give low priority.
+
+in internal css 
+    -> it is one to many respresent write css code one time and use it many time.
+
+    Syntax
+        selector{
+            property1:value;
+            property2:value;
+            }
+        Example
+        p{
+            height:200px
+            width:300px
+            background:red;
+        }
+
+    -> All html tags  are called as selector in CSS
+
+    CSS has 6 types of selector
+        1. tag selector
+            Example 
+                (any tag name) as 
+                h3{
+                font-size: 30px;
+                color: pink;
+                float: left;
+                width: 23%;
+                margin: 1%;
+                } 
+    ------------------------------------------
+        2. tag group selector
+            Example 
+      h2,b,h4{
+        font-size: 35px;
+        color: yellow;
+        margin: 30px;
+      }
+-------------------------------------------------
+        3. id selector
+        Example
+            #block1{
+                font-size: 30px;
+                text-align: center;
+                height: 250px;
+                background: pink;
+                margin:30px;
+            }
+    Note: 1 css id should not get used more than 1 time in 1 page.
+            use 1 id only 1 time in 1 page.
+--------------------------------------------------
+        4. class selector
+            Example
+                .service{
+            margin: 2%;
+            width: 21%;
+            float: left;
+            height: 150px;
+            background: orange;
+            text-align: center;
+            font-size: 30px;
+           }
+
+    Note - in 1 page , 1 class can be use multiple time
+-------------------------------------------------------
+        5. parent child selector
+            Example
+                div p{
+                    color: red;
+                    font-size: 40px;
+                    width: 25%;
+                    float: left;
+                 }
+--------------------------------------------------------
+        6. attribute selector
+            Example
+            input[type="text"]{
+                height: 30px;
+                width: 300px;
+                color: red;
+                padding: 5px;
+                display: block;
+                margin: 20px;
+            }
+             
+========================property and values in css======================================
+    background - 9 type 
+        background:red;
+        background-color:red;
+        background-color:rgb( 100, 120, 150);  0 to 255
+        background-color:rgba( 100, 120, 150,0.5);
+        background-image:url('1.jpg');
+        background-image:linear-gradient(orange,blue);
+        background-image:linear-gradient(to left, orange, blue);
+        background-image:linear-gradient(to right, orange, blue);
+        background-image:linear-gradient(to top, orange, blue);
+
+----------------------------------------------------------------------------------------
+     height - 3 type
+        height:200px; it is fixed for 200px only.
+        min-height:200px; the min-height is fixed and max height is based on contents.
+        height:auto; the height is fully based on contents.
+
+-------------------------------------------------------------------------------------
+    width - 4 type
+        width:px - it is fixed all size of window.
+        width:% - it will fit in all size of window.
+        min-width: - it set min width limit
+        max-width: - it set max width limit
+
+-------------------------------------------------------------------------------------
+    float - it convert from block-level tag to inline tag.
+            it is of two types
+            float:left - it print from left to right
+            float:right - it print from rigth to left
+    margin - it use to apply space outside of tag.
+     margin:auto; - it print the tag in center of present area.
+     margin:40px; - it apply 40px gap from all side.
+     margin-top:40px;
+     margin-bottom:40px;
+     margin-right:40px;
+     margin-left:40px;
+     margin:top left-right bottom
+      margin:40px 200px 50px;
+=================================================================================
+ p{} => tag selector
+ p,h1{} => group selector
+ #abc{}=> id selector
+ .xyz{} => class selector
+ div p{} => parent and child selector
+
+ -----------------------------------------------------------------------
+    padding - it used to apply space inside the tag.
+        padding:30px - it apply 30px gap from all side
+        padding-top:30px - it apply space only from top side
+        padding-left:30px - it apply space only from left side
+        padding-right:30px - it apply space only from right side
+        padding-bottom:30px - it apply space only from bottom side
+        padding:top left+right bottom
+            padding:40px 60px 30px
+
+    Note - margin apply space out of tag. padding apply space inside of tag.
+------------------------------------------------------------------------
+    display: inline     - it convert from block level tag to inline tag 
+                         but height and width will not work.
+    display:inline-block - it also convert from block-level tag to
+                           inline tag but height and width both will work.
+    display:block        - it convert from inline tag to block-level tag.
+    display:none         - it hide the html tag.
+    display:grid         -
+    display:flex         -
+
+
+    <section>
+        <div> Website Devlopment</div>
+        <div> Digital Marketing</div>
+        <div> Content Writing</div>
+        <div> Hire and Deploy</div>
+         <div>Bangalore</div>
+        <div>Mumbai</div>
+        <div>Delhi</div>
+        <div>Chennia</div>
+        <div>Hyderabad</div>
+        <div>Vizag</div>
+        <div>Goa</div>
+        <div>Bhopal</div>
+    </section>
+-----------------------------------------------------------------------
+    Media Query in css?
+    - it used to create responsive webpage.
+    Syntax
+    @media screen and min-width() and max-width() {
+        property:value.....
+    }
+-----------------------------------------------------------------------
+    Animation in css
+    @keyframes animationName{
+        property:value......
+    }
+--------------------------------------------------------------------
