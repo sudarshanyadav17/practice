@@ -1,0 +1,202 @@
+HTML - Hypertext markup language.
+     - It has collections of pre-defined tags.
+     - the html tags use to create basic Structure of webpage.
+     - the html tags use to collect input from user and 
+     also html tags use to display output to user
+     the html tags has limited feature (attribute and value).Due to this
+     limitation CSS is required.
+
+    Responsive webpage= html(tags) + CSS (property and values)
+---------------------------------------------------------------------------
+-> Tags?
+    <>  open tag
+    </> close Tags
+-> Type of tag?
+    1. Input tags- it use to collect input from user via web browser.
+    2. Output tags- it use to display output to user via web browser.
+-> Structure of html tags ?
+    1. dependent tag - Those html tags, that open seprate and close seprate
+        example - 
+        <html></html>
+        <body></body>
+    2. independent tag -Those html tags that has only open. Angular and react do not support. 
+        example -
+        <br>
+        <img> 
+    3. self  closing tag - Those html tags that open and close together it get supported 
+        by all the languages.
+        example -
+        <br/>
+        <img/>
+    -> Behavior of html tags?
+        1. Inline tag - Those html tags , that print statement in same line (side by side)
+        2. Block level tag - Those html that print statement in new line by default.
+
+    Note - Using CSS 
+        1. inline tag we can convert into block-level tag.
+        2. block-level tag convert into inline tag.    
+That is called as Responsive Web design.
+      
+----------------------------------------------------------------------------
+What are valid extension of html document ?
+->.html- it is most popular for seo and digital marketing
+->.htm
+
+------------------------------------------------------------
+<!DOCTYPE html> ?
+->it Represent the type of document.
+->it introduce about th comtent of current file to translator
+->it also Represent that there be use of html 5 tags inside body tag.
+->it also infrom to translator
+
+-------------------------------------------------------------
+Structure of html document ?
+    html start to html end called as a document / root element
+    it get divided into two parts
+    ->head
+        ->Analytics
+        ->marketing section  (for digital marketing)
+        ->library section(CSS,Javacript,other)
+    ->body
+        ->it is for html tags of input and output for user.
+        ->Note- use suitable tags as per contents.
+-------------------------------------------------------------
+h1 - h6 - It is called heading tag. it used to display page headline. 
+        - In Every page h1 is required  min and max of 1 time.
+        - h2 to h6 use to inner level heading  of contents in webpage.
+        -h2 to h6 no any limitation.
+        Note -Above limitation is from digital marketing point of view.
+
+----------------------------------------------------------
+p - The p tag used to display in one page .but the text should be more than 1 line. 
+min 130 chars then use p tag.
+label,b,i,u,font,strong,em.....tags- suitable to display text data in webpage between 1 to 130 character
+
+-------------------------------------------------------------
+    text-formating tags
+    b,i,u,font,strong,em.....
+------------------------------------------------------------
+type of lists in html ?
+    1.OL - Ordered List
+       type="1"
+       type="a"
+       type="A"
+       type="i"
+       type="I"
+
+    2.UL - Unorderd List
+    type="disc"
+    type="square"
+    type="circle"
+    type="none"
+    
+    3. DL - Definition List 
+        dt -> Definition title (it create headline of contents)
+            -> it used to create headline of content
+        dd ->Definition details (it use to display details about content)
+            -> It used to display details about the content
+        Use DL in - Q.A
+                  - Blogs
+                  - Public Survey 
+                   - Comments
+
+------------------------------------------------------------------
+    Table in html?
+        1. method 1 : html 4
+            Table
+                -> Caption
+                -> tr(table row)
+                -> th(table heading)
+                -> td(able data)
+
+        2. method 2 : html 5
+            table
+                -> thead - it cover upper part of table
+                    -> tr 
+                        ->th
+                -> tbody- it cover middle part of table
+                    ->tr
+                      ->td
+                -> tfoot- it cover the bottom part of table
+                    ->tr
+                       ->th
+--------------------------------------------------------------------
+    =>Attribute and value in table, tr, th, td
+        1. align  - left,right,center
+        2. valign - top, middle, bottom
+        3. border
+        4. border-color - it apply color to border 
+        5. cellpadding  - it apply space inside th,td
+        6. cellspacing  - it apply space outside th,td 
+        7. width
+        8. colspan - it used to combine a space of two or more th and td
+        9. rowspan - it used to combine a space of two or more tr 
+-----------------------------------------------------------------------
+    => How to link the pages
+    <a href="" target="_new" title="infocampus assign login" id="" class=""> Text To Click </a> 
+
+    -> a - it is called anchor tag - to link the pages.
+    -> href- it is attribute of 1 tag. it use to set path/location for next page.
+    -> target- it used to set location for next file that where it should open. 
+    -> title- it is for digital marketing - it introduce to search engine that what is the purpose
+    of this link. 
+    -> id,class - it is used to link with CSS and Javacript.
+
+    => Type of target ?
+        target="_self"  - it opens next page within the same tag it is default target
+        target="_new"   - it open next page in new tab but only at 1st Click
+        target="_blank" - it open next page in new tab but every Click.
+
+        Using Javacript 
+        target="_child" - it open pop up window.
+        target="_parent"- it target to parent window.
+
+        Using html frameset
+        target="userdefined" - developer can create own target based on need 
+
+
+-------------------------------------------------------------------------
+
+=>List of input tags
+    1. text
+    2. number
+    3. email
+    4. password
+    5. file
+    6. select
+    7. textarea
+    8. data
+    9. datatime-local
+    10. checkbox
+    11. radio
+    12. button
+        -> submit
+        -> reset
+        -> button
+List of property in input tags 
+    ->placeholder - it is for input guidance(text, email,password,email,textarea,number)
+    ->maxlength - it is to set limit in input tags(text, email,password,email,textarea,)
+    ->size      - it use to resize the width of (text,email,password)
+    ->name      - it use to create container/variable that hold the value given by user.
+                  and this container will be accessed by backend language
+    ->action    - it used to set path/ url for backend language , where the 
+                  form data will get submitted.
+    ->Method    - it used to set the type of communication between client and server. 
+                  it is of following types
+                  1. GET- it is unsecure communication.it show data in browser url
+                  2.POST- it is fully secure communication.it do not show anywhere
+                  --------in Javascript-----
+                  3.PUT/PATCH
+                  4.DELETE
+    ->button
+        ->reset  - it clear the form data.
+        ->submit - it submit the form data to action page.
+        ->button - it works with the help of Javascript.
+
+    form - it is parent tag of all input tag.
+
+-------------------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>input tags</title>
+  </head>
+  <body bgcolor="lightgreen">
+    <table align="center" cellpadding="15">
+      <tr>
+        <th><a href="form1.html"> Contact Us</a></th>
+        <th><a href="form2.html"> Create Account</a></th>
+        <th><a href="form3.html"> Login</a></th>
+        <th><a href="form4.html"> Enquiry </a></th>
+      </tr>
+    </table>
+    <hr color="orange" size="5" />
+    <h1 align="center">Login</h1>
+    <table align="center" bgcolor="white">
+      <tr>
+        <td>
+          <fieldset>
+            <legend>Enter Login Details</legend>
+            <form action="usercheck.php" method="POST">
+              <!--action refers backend access GET method is unsecured to use -->
+              <table cellpadding="20">
+                <tr>
+                  <th>e-Mail Id</th>
+                  <td>
+                    <input
+                      type="email"
+                      placeholder="enter e-mail id"
+                      name="my e-mail"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th>Password</th>
+                  <td>
+                    <input
+                      type="password"
+                      placeholder="enter password"
+                      name="mypass"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2">
+                    <button type="submit">Login</button>
+                    <button type="reset">Clear</button>
+                  </th>
+                </tr>
+              </table>
+            </form>
+          </fieldset>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

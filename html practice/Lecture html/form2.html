@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>input tags</title>
+  </head>
+  <body>
+    <table align="center" cellpadding="15">
+      <tr>
+        <th><a href="form1.html"> Contact Us</a></th>
+        <th><a href="form2.html"> Create Account</a></th>
+        <th><a href="form3.html"> Login</a></th>
+        <th><a href="form4.html"> Enquiry </a></th>
+      </tr>
+    </table>
+    <hr color="orange" size="5" />
+    <form action="" method="">
+      <table align="center" cellpadding="15">
+        <caption>
+          <h1>Create Account</h1>
+        </caption>
+        <tr>
+          <th>First Name</th>
+          <td><input type="text" placeholder="your first name" /></td>
+          <th>Last Name</th>
+          <td><input type="text" placeholder="your last name" /></td>
+        </tr>
+        <tr>
+          <th>e-Mail Id</th>
+          <td><input type="email" placeholder="your email-id" /></td>
+          <th>Mobile No</th>
+          <td><input type="number" placeholder="your mobile no " /></td>
+        </tr>
+        <tr>
+          <th>Password</th>
+          <td><input type="password" placeholder="enter password" /></td>
+          <th>Confirm Password</th>
+          <td><input type="password" placeholder="enter password " /></td>
+        </tr>
+        <tr>
+          <th>Date of Birth</th>
+          <td><input type="date" /></td>
+          <th>Gender</th>
+          <td>
+            <input type="radio" name="gender" value="Male" /> Male
+            <input type="radio" name="gender" value="Female" /> Female
+          </td>
+        </tr>
+        <tr>
+          <th>Full Address</th>
+          <td colspan="3">
+            <textarea rows="6" cols="82" placeholder="enter address"></textarea>
+            <!---inside textarea should not be given any space before closing-->
+          </td>
+        </tr>
+        <tr>
+          <th> Upload Photo</th>
+          <td> <input type="file"/></td>
+          <th> Address Proof</th>
+          <td> <input type="file"/> </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <input type="checkbox" checked="checked"> I am agree on Terms and Conditions.
+            <br/><br/>
+            <details>
+              <summary> Read More...</summary>
+              <p> this is from trem and Conditions contents.ssdsds sds sds ds sdsd sd
+                asdsdadaf asd asddas dasdd asdda aaasd adada sda  
+               </p>
+            </details>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="4">
+            <button type="submit"> Submit </button>
+            <button type="reset"> Clear All </button>
+          </th>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
