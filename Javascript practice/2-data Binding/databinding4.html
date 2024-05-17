@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const save=()=>{
+                let fname=document.getElementById("myname").value;
+               
+                document.getElementById("showname").innerText=fname;
+
+                document.getElementById("showlength").innerText=fname.length;
+
+                let edu=document.getElementById("myedu").value;
+
+                document.getElementById("showedu").innerText=edu;
+                let city=document.getElementById("mycity").value;
+                document.getElementById("showcity").innerHTML=city;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Find the length of Your Name</h1>
+        <p>
+            Enter your Name : <input type="text" id="myname"/>
+            Enter Your Education :<input type="text" id="myedu"/>
+            Enter Your City:<input type="text" id="mycity"/>
+            <button onclick="save()">Save</button>
+        </p>
+
+        <h2 id="showname"> </h2>
+        <p id="showlength">
+
+        </p>
+        <h2 id="showedu"></h2>
+        <h2 id="showcity"> </h2>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p{
+                font-size: 30px;
+                color: blue;
+                width: 24%;
+                display: inline-block;
+                font-weight: bold;
+                text-align: center;
+            }
+            #container{
+                width: 80%;
+                margin: auto;
+            }
+            button{
+                padding: 7px 20px 7px;
+                border: none;
+                color: blue;
+                font-size: 20px;
+                cursor: pointer;
+                
+            }
+            button:focus{
+                background: red;
+                color: white;
+            }
+            body{
+                text-align: center;
+            }
+        </style>
+        <script>
+            const one=()=>{
+                let temp = " " ;
+                for(let i=1;i<=10;i++){
+                // console.log( i );
+                    temp= temp + "<p>" + i + "</p>" ;
+                }
+
+                document.getElementById("container").innerHTML = temp;
+            }
+            const two=()=>{
+                let temp = " " ;
+                for(let i=11; i<=20; i++){
+                // console.log( i );
+                    temp= temp + "<p>" + i + "</p>" ;
+                }
+
+                document.getElementById("container").innerHTML = temp;
+            }
+
+            const three=()=>{
+                let temp = " " ;
+                for(let i=1; i<=20; i=i+2){
+                // console.log( i );
+                    temp= temp + "<p>" + i + "</p>" ;
+                }
+
+                document.getElementById("container").innerHTML = temp;
+            }
+            const four=()=>{
+                let temp = " " ;
+                for(let i=2; i<=20; i=i+2){
+                // console.log( i );
+                    temp= temp + "<p>" + i + "</p>" ;
+                }
+
+                document.getElementById("container").innerHTML = temp;
+            }
+            const five=()=>{
+                let allbook=['HTML','CSS','Bootstrap','React','Javascript','PHP','Phython','Node'];
+                let temp="";
+                for(let i=0; i<allbook.length ; i++ ){
+                    temp= temp +"<p>" + allbook[i] + "</p>";
+                }
+                document.getElementById("container").innerHTML = temp;
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1> Dynamic HTML Using Javascript</h1>
+        <button onclick="one()"> Print 1 to 10</button>
+        <button onclick="two()"> Print 11 to 20</button>
+        <button onclick="three()"> Print 1 o 20 Odd No</button>
+        <button onclick="four()"> Print 1 to 20 Even No</button>
+        <button onclick="five()"> Book List </button>
+
+        <section id="container">
+
+        </section>
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+
+=> Difference Between var,let and const
+
+    value change
+    -> var allow to change the value 
+    -> let allow the change the value
+    -> const do not allow to change the value
+
+    redeclaration
+    -> var allow declaration of variable
+    -> let and const do not allow to redeclaration of variable
+
+    Scope
+        var has global Scope
+        let and const has block level scope
+
+        {
+            This is a block
+        }
+
+------------------------------------------------------------------------------
+=> Control Structure - it control the flow of data in application 
+    1. Condition 
+        -> if else 
+        -> if else if
+        -> nested if
+        -> switch case
+    2. Loop
+        -> for Loop
+        -> while
+        -> do while
+-------------------------------------------------------------------------------
+=> Function in javascript 
+    3 type of user defined function
+    -> Function one{
+            .........
+         }
+    -> Const two = function(){
+            .........
+        }
+    -> Const three = () =>{
+            .......
+        }
+----------------------------------------------------------------------------
+=> Array in javascript
+    
+    ->Single dimensional Array
+    ->Multi dimensional Array
+    ->Nested Array
+
+---------------------------------------------------------------------------
+-> Listing Function
+-> map() - need Array
+->forEach() 
+    
+
+
+
+

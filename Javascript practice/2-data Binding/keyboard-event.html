@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const one = (cityname) =>{
+                console.log ( "Your City is :" + cityname);
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Javascript Keyboard Events</h1>
+        <p> On key press : <input type="text" value="Bangalore" onkeypress="one(value)"/>
+            it do not capture the last character , the backspace do not work.
+        </p>
+
+        <p> On key Down : <input type="text" value="Bangalore" onkeydown="one(value)"/>
+            it do not capture the last character , but the backspace will work.
+        </p>
+
+        <p> On key Up : <input type="text" value="Bangalore" onkeyup="one(value)"/>
+            it capture all the characters and backspace will work.
+        </p>
+        <p> On Focus : <input type="text" value="Bangalore" onfocus="one(value)"/>
+            it get call as soon as cursor arrive to input box.
+        </p>
+        <p> On Blur : <input type="text" value="Bangalore" onblur="one(value)"/>
+            it get call as soon as cursor move out from the text box.
+        </p>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="api.css"/>
+        <script>
+            const home= () =>{
+                fetch("home.html")
+                .then(homedata =>homedata.text())
+                .then(orginalData=>{
+                    document.getElementById("container").innerHTML = orginalData ;
+                })
+            }
+            const about = () =>{
+                fetch("about.html")
+                .then(homedata =>homedata.text())
+                .then(orginalData=>{
+                    document.getElementById("container").innerHTML = orginalData ;
+                })
+            }
+            const service = () =>{
+                fetch("services.html")
+                .then(homedata =>homedata.text())
+                .then(orginalData=>{
+                    document.getElementById("container").innerHTML = orginalData ;
+                })
+            }
+
+            const city =() =>{
+                fetch("city.json")
+                .then(homedata =>homedata.json())
+                .then(cityArray=>{
+                    // document.getElementById("container").innerHTML = orginalData ;
+                    // alert (cityArray.length); 
+
+                    let temp="<h1> Branch List </h1>";
+                    cityArray.map((cityname,index)=>{
+                        temp = temp + "<p class='three'>" + cityname +"</p>";
+                    })              
+                    document.getElementById("container").innerHTML = temp ;
+                 })
+            }
+
+            const blog=()=>{
+                fetch("https://jsonplaceholder.typicode.com/posts")
+                .then(response =>response.json())
+                .then(blogArray=>{
+             
+
+                    let temp="<h1> Blog List </h1>";
+                    blogArray.map((blog,index)=>{
+                        temp = temp + "<p class='myblog'>" + blog.body +"</p>";
+                    })              
+                    document.getElementById("container").innerHTML = temp ;
+                 })
+            }
+
+            const comment=()=>{
+                fetch("https://jsonplaceholder.typicode.com/comments")
+                .then(response =>response.json())
+                .then(blogArray=>{
+             
+
+                    let temp="<h1> Recent Feedback  </h1>";
+                    blogArray.map((blog,index)=>{
+                        temp = temp + "<div class='myblog'>";
+                        temp = temp + "<h3>" + blog.name + "</h3>";
+                        temp = temp + "<small>" + blog.email + "</small>";
+                        temp = temp + "<p>" + blog.body +"</p>";
+                        temp = temp + "</div>";
+                    })              
+                    document.getElementById("container").innerHTML = temp ;
+                 })
+
+            }
+            const album=()=>{
+                fetch("https://jsonplaceholder.typicode.com/albums")
+                .then(response =>response.json())
+                .then(blogArray=>{
+
+                    let temp="<h1> Avaliable Albums </h1>";
+                    blogArray.map((blog,index)=>{
+                        temp = temp + "<div class='myblog'>";
+                          temp = temp + "<p>" + blog.title +"</p>";
+                        temp = temp + "</div>";
+                    })              
+                    document.getElementById("container").innerHTML = temp ;
+                 })
+
+            }
+
+            const emp=()=>{
+                fetch("http://localhost:1234/emplist")
+                .then(response=>response.json())
+                .then(empArray=>{
+                   
+                    let temp="<h1> Avaliable Employee </h1> <p> <a href='newemp.html'> Add Employee </a> </p> ";
+                    empArray.map((emp,index)=>
+                    {
+                        temp = temp + "<div class='myblog'>";
+                        temp = temp + "<h3>" + emp.empname +"</h3>";
+                        temp= temp + "<p>" + emp.city +"</p>";
+                        temp= temp + "<p>" + emp.salary +"</p>";  
+                        temp= temp + "<p>" + emp.dept +"</p>";   
+                        temp= temp + "<p> <button onclick=delemp('"+ emp.id +"')> Delete</button></p>";                    
+                        temp = temp + "</div>";
+                    })              
+                    document.getElementById("container").innerHTML = temp ;
+                 })
+            
+            }
+
+            const delemp=(id)=>{
+                let url ="http://localhost:1234/emplist/"+id;
+                alert(  url );
+                let postData = {method:"delete"};
+                //fetch function
+                fetch(url,postData)
+                .then(response => response.json())
+                .then(empinfo=>{
+                    alert(empinfo.empname + "Delete Successfully !");
+                    emp(); // to reload the list 
+                })
+
+            }
+            const book=()=>{
+                fetch("http://localhost:1234/booklist")
+                .then(response=>response.json())
+                .then(bookArray=>{
+                    let temp ="<h1> Avaliable Book </h1> <p> <a href='newbook.html'> New Book </a> </p>";
+                    bookArray.map((book,index)=>{
+                        temp = temp + "<div class='myblog'>";
+                        temp = temp + "<h3>" + book.bookname + "</h3>";
+                        temp = temp + "<p>" + book.price + "</p>";
+                        temp = temp + "<p>" + book.qty+ "</p>";
+                        temp = temp + "<p> <button onclick=delbook('"+ book.id +"')>Delete</button></p>"
+                        temp = temp + "</div>";
+
+                    }) 
+
+                    document.getElementById("container").innerHTML = temp ;
+                })
+            }
+
+            const delbook=(id)=>{
+                let url ="http://localhost:1234/booklist/"+id;
+                alert(  url );
+                let postData = {method:"delete"};
+                //fetch function
+                fetch(url,postData)
+                .then(response => response.json())
+                .then(bookinfo=>{
+                    alert(bookinfo.bookname + "Delete Successfully !");
+                    book(); // to reload the list 
+                })
+
+            }
+
+            const product=()=>{
+                fetch("http://localhost:1234/ProductList")
+                .then(response=>response.json())
+                .then(productArray=>{
+                    let temp="<h1> Avaliable Product Data </h1> <p><a href='newproduct.html'> Add Product </a></p>";
+                    productArray.map((product,index)=>{
+                        temp = temp + "<div class='myblog'>";
+                        temp = temp + "<h3>" + product.product+"</h3>";
+                        temp = temp + "<p>" + product.quantity + "</p>";
+                        temp = temp + "<p>" + product.color + "</p>";
+                        temp = temp + "<p>" + product.cost + "</p>";
+                        temp = temp + "</div>";
+                    })
+                    document.getElementById("container").innerHTML = temp;
+                })
+
+            }
+
+            const  company=()=>{
+                fetch("http://localhost:1234/companyList")
+                .then(response=>response.json())
+                .then(companyArray=>{
+                    let temp = "<h1> Company Details</h1> <p><a href='newcompany.html'> Add Company </a></p>";
+                    companyArray.map((company,index)=>{
+                        temp = temp +"<div class='myblog'>";
+                        temp = temp +"<h3>"+ company.company +"</h3>";
+                        temp = temp + "<p>" + company.branch +"</p>";
+                        temp = temp +"<p>" + company.city + "</p>";
+                        temp = temp +"</div>";
+                    })
+                    document.getElementById("container").innerHTML = temp;
+                })
+            }
+            
+        </script>
+    </head>
+    <body onload="home()">
+        <header>
+            <button onclick="home()"> Home </button>
+            <button onclick="about()"> About Us </button>
+            <button onclick="service()"> Services </button>
+            <button onclick="city()">Branches </button>
+            <button onclick="blog()"> Blogs </button>
+            <button onclick="comment()"> Comment </button>
+            <button onclick="album()"> Album </button>
+            <button onclick="emp()"> Employee </button>
+            <button onclick="book()"> Book</button>
+            <button onclick="product()"> Product </button>
+            <button onclick="company()"> Company </button>
+        </header>
+        <section id="container">
+
+        </section>
+    </body>
+</html>

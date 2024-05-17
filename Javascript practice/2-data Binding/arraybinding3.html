@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+           let allitem=[
+            {name:"Mouse",price:400,qty:10},
+            {name:"Keyboard",price:500,qty:15},
+            {name:"Laptop",price:50000,qty:2}
+        ];
+           const getItem = () =>{
+                // alert("Item Will List");
+                let data="";
+                allitem.map((item,index)=>{
+                    data = data + "<tr>";
+                    data = data + "<td>" + index + "</td>";
+                    data = data + "<td>" + item.name + "</td>";
+                    data = data + "<td>" + item.price + "</td>";
+                    data = data + "<td>" + item.qty + "</td>";
+                    data = data + "<td> <button onclick=delItem("+ index +")>Delete</button> </td>";
+                    data = data + "<td> <button onclick=editItem(" + index +")>Edit</button> </td>";
+                    data = data + "</tr>";
+                })
+                document.getElementById("itemlist").innerHTML = data;
+           } 
+           
+           const delItem=(index)=>{
+            let userinput = confirm("Are You Sure to delete ? ");
+            if(userinput== true){
+            let itemname = allitem[index].name;//
+            allitem.splice(index,2);
+            getItem();
+            document.getElementById("message").innerText = itemname + "- Deleted Successfully";
+        }
+           }
+            let itemindex = -1;
+           const editItem=(index)=>{
+            //   alert( allitem[index].name );
+            itemindex = index;
+            document.getElementById("itemname").value = allitem[index].name;
+             document.getElementById("itemprice").value = allitem[index].price;
+             document.getElementById("itemqty").value = allitem[index].qty;
+
+           }
+           const save=()=>{
+             let itemname= document.getElementById("itemname").value;
+             let itemprice= document.getElementById("itemprice").value;
+             let itemqty= document.getElementById("itemqty").value;
+
+             let iteminfo = {name: itemname , price: itemprice , qty: itemqty };//create New Object
+
+             if (itemindex == -1){
+             allitem = allitem.concat(iteminfo); // push object in array of object 
+             document.getElementById("message").innerText= itemname + " Save Successfully !";
+            }else{
+                // update the item
+                allitem[itemindex] = iteminfo;; 
+                itemindex = -1; // rest to default value after update
+                document.getElementById("message").innerText= itemname + " Updated Successfully ! ";
+
+            }
+             getItem(); // te reload the list
+
+             //clear text fileds
+             document.getElementById("itemname").value = "";
+             document.getElementById("itemprice").value = "";
+             document.getElementById("itemqty").value = "";
+             
+           }
+        </script>
+    </head>
+    <body onload="getItem()">
+        <h1 align="center"> Array of Object - Add,List , Delete</h1>
+        <table align="center" cellpadding="15">
+            <tr>
+                <th> Item Name</th>
+                <td> <input type="text" id="itemname"/> </td>
+            </tr>
+            <tr>
+                <th> Item Price</th>
+                <td> <input type="text" id="itemprice"/> </td>
+            </tr>
+            <tr>
+                <th> Item Quantity</th>
+                <td> <input type="text" id="itemqty"/> </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button onclick="save()"> Save Item </button>
+                </th>
+            </tr>
+
+        </table>
+        <p align="center" id="message" style="color:blue;font-size: 25px;"> Item List</p>
+        <table align="center" cellpadding="10" width="60%">
+            <thead>
+                <tr bgcolor="orange" align="left">
+                    <th> Sl No</th>
+                    <th> Item Name</th>
+                    <th> Item Price</th>
+                    <th> Item Quantity</th>
+                    <th> Delete</th>
+                    <th> Edit</th>
+                </tr>
+            </thead>
+            <tbody id="itemlist">
+
+            </tbody>
+            <tfoot>
+                <tr bgcolor="lightgrey" align="left">
+                    <th> Sl No</th>
+                    <th> Item Name</th>
+                    <th> Item Price</th>
+                    <th> Item Quantity</th>
+                    <th> Delete</th>
+                    <th> Edit</th>
+                </tr>
+            </tfoot>
+
+        </table>
+    </body>
+</html>

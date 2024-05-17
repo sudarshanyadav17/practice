@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const one = () => {
+                alert("Hi, Your Message is here");
+            }
+
+            const two = () => {
+               let a= confirm("Are You Sure ?");
+               if ( a==true) {
+                alert("Please Wait Deleting...");
+               }else{
+                alert("No Problem...");
+               }
+            }
+
+            const three = () => {
+                let email = prompt ("Enter Your Email Id");
+                alert("The Download link sent to  \n"+ email);         
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Pop Up Window </h1>
+        <button onclick="one()"> Alert </button>
+        <p> Alert() use to give confirmation message to user </p>
+
+        <br/><br/>
+
+        <button onclick="two()"> Confirm To Delete </button>
+        <p>The Confirm() use to ask confirmation from user . ok button => true , cancel button => false </p>
+
+        <br/><br/>
+
+        <button onclick="three()"> Download File - Prompt </button>
+        <p>The Prompt used to collect input from user via pop up window. </p>
+
+    </body>
+</html>

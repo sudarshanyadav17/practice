@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const save= () => {
+
+                let name= document.getElementById("fname").value;
+                document.getElementById("showname").innerText= name;
+
+                let number= document.getElementById("age").value;
+                document.getElementById("showage").innerText= number;
+
+                let city= document.getElementById("city").value;
+                document.getElementById("showcity").innerText= city;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> About Your Profile</h1>
+        <table cellpadding="15">
+            <tr>
+                <th> Your Name </th>
+                <td> <input type="text" id="fname"/></td>
+                <td id="showname">??</td>
+            </tr>
+            <tr>
+                <th> Your Age</th>
+                <td> <input type="text" id="age"></td>
+                <td id="showage"></td>
+            </tr>
+            <tr>
+                <th> Your City</th>
+                <td> <input type="text" id="city"></td>
+                <td id="showcity"></td>
+            </tr>
+            <tr>
+                <th colspan="3"> 
+                    <button onclick="save()" >Show Details</button>
+                </th>
+            </tr>
+
+        </table>
+        
+    </body>
+</html>

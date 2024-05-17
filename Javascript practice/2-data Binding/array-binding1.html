@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #container{
+                width: 80%;
+                margin: auto;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                color: orange;
+                font-size: 35px;        
+            }
+           
+        </style>
+        <script>
+            let booklist=['Javascript','css','react','bootstrap']
+            const getBook = () => {
+                let bookdata =" ";
+                booklist.map((bookName,index)=>{
+                    bookdata = bookdata + "<p>" + bookName + " <br> <button onclick= delbook("+ index +")>Delete</button> <button onclick=editbook(" + index + ")> Edit</button> </p>";
+                })
+                document.getElementById("container").innerHTML = bookdata;
+            }
+
+            const delbook = (index) =>{
+                let userWish = confirm("Are Sure to delete ?");
+
+                if( userWish == true )
+                {
+                    booklist.splice(index, 1);//splice function 
+                    getBook(); // reload the list after delete
+                let booklist =['html','css','javascript','bootstrap','react'];
+                }
+
+            }   
+
+            let bookindex = -1;
+            const editbook = (index) => {
+                bookindex = index;// bookindex assigned to global variarble for update
+                document.getElementById("bname").value= booklist[index];
+                
+
+            }
+            const save = () => {
+                let bookname = document.getElementById("bname").value; //take value from text box
+                if(bookindex >= 0 ){
+                    booklist[bookindex] = bookname; // update value in array on given position
+                    alert("Updated...."); 
+                    bookindex = -1;// reset to default
+                }
+                else{
+                booklist.unshift(bookname); // add new element in begining of array
+                // booklist.push(bookname);  // add new element at the end of array
+                alert(bookname + "Added Successfully!");
+                }
+
+                document.getElementById("bname").value = ""; //to clear textbox
+                getBook(); // to read the list after adding
+
+            }
+
+
+        </script>
+    </head>
+    <body onload="getBook()" >
+        <h1 align="center"> Array Add ,List ,Delete Using Javascript </h1>
+        <div align="center">
+            Enter Book Name :<input type="text" id="bname" size="40"/>
+            <button onclick="save()"> Save Book</button>
+        </div>
+        <section id="container">
+
+
+        </section>
+    </body>
+</html>

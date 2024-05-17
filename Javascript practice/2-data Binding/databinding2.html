@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            const save=()=>{
+                let newcity = document.getElementById("city").value; // take from textbox using .value
+                // alert( newcity );
+                document.getElementById("mycity").innerText= newcity; //display in h1 using innerText
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1> value, .innerText</h1>
+        <p>
+             Your City Name : <input type="text" id="city" value="Chennai"/>
+             <button onclick="save()"> Save </button>
+        
+        </p>
+
+        <h1 id="mycity"> </h1>
+    </body>
+</html>

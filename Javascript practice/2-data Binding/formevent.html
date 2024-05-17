@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const formValidate = () =>{
+                alert("Hi...");
+
+                return false;
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Html onsubmit Event </h1>
+        <form action="saveuser.php" method="POST" onsubmit="return formValidate()">
+            <p> Full Name : <input type="text"/></p>
+            <p> Mobile No: <input type="number"/></p>
+            <button type="submit">Save</button>
+            <button type="reset">Reset</button>
+        </form>
+    </body>
+</html>

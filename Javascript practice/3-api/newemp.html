@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const save=()=>{
+                let name=document.getElementById("empname").value;
+                let salary=document.getElementById("salary").value;
+                let dept=document.getElementById("dept").value;
+                let city=document.getElementById("city").value;
+
+                let url = "http://localhost:1234/emplist";
+                let newemp = {empname:name, salary:salary, city:city, dept:dept};
+                let postData ={
+                    headers:{'content-type':'application/json'},
+                    method:'POST',
+                    body:JSON.stringify(newemp)
+                }
+
+                fetch(url, postData)
+                .then(response=>response.json())
+                .then(empinfo=>{
+                    alert("New Employee Save Successfully !");
+                })
+
+            }
+        </script>
+    </head>
+    <body>
+        <table align="center" cellpadding="15">
+            <caption>
+                <h1> Enter Empolyee Details</h1>
+            </caption>
+            <tr>
+                <th>Employee Name</th>
+                <td><input type="text" id="empname"/></td>
+            </tr>
+            <tr>
+                <th>Empolyee Salary</th>
+                <td><input type="text" id="salary"/></td>
+            </tr>
+            <tr>
+                <th>Empolyee Department</th>
+                <td><input type="text" id="dept"/></td>
+            </tr>
+            <tr>
+                <th>Empolyee City</th>
+                <td><input type="text" id="city"/></td>
+            </tr>
+           <tr>
+            <th colspan="2">
+                <button onclick="save()">Save Empolyee</button>
+                <hr>
+                <a href="index.html">Back to List</a>
+            </th>
+           </tr>
+
+        </table>
+    </body>
+</html>

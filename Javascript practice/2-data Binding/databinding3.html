@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            const save=()=>{
+                let newcity = document.getElementById("city").value; // take from textbox using .value
+
+                document.getElementById("mycity").innerText= newcity; //display in h1 using innerText
+
+                document.getElementById("total").innerText= newcity.length;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1> value, .innerText</h1>
+        <p>
+            <textarea type="text" id="city" value="Chennai" onkeyup="save()" rows="10" cols="50"></textarea>
+    
+        </p>
+
+        <p id="mycity"> </p>
+        <p id="total">  </p>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="ajax.css">
+        <script>
+            const home = () =>{
+                var xmlhttp = new XMLHttpRequest();// object creation of XMLHttpRequest class it is predifined function od javascript
+
+                 xmlhttp.open("GET","home.html");// it generate url based on the GET method - readystate is == 1
+                 xmlhttp.send(); // it send request to above generated url - 2
+
+                 //this.status is server side response that total data is done sending
+                xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("container").innerHTML = this.responseText;
+                 }
+                     };
+                
+               }
+
+
+
+            const education = () =>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("container").innerHTML = this.responseText;
+                 }
+                     };
+                xmlhttp.open("GET","edu.html");
+                 xmlhttp.send();
+            }
+            const skill = () =>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("container").innerHTML = this.responseText;
+                 }
+                     };
+                xmlhttp.open("GET","skill.html");
+                 xmlhttp.send();
+            }
+            const project = () =>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("container").innerHTML = this.responseText;
+                 }
+                     };
+                xmlhttp.open("GET","project.html");
+                 xmlhttp.send();
+            }
+            const experience = () =>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                 document.getElementById("container").innerHTML = this.responseText;
+                 }
+                     };
+                xmlhttp.open("GET","exp.html");
+                 xmlhttp.send();
+            }
+            const service = () =>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let allservice = JSON.parse(this.responseText);//convert from JSON to array
+                    let data = "<h1> Services List </h1>";
+                    allservice.map((serviceName,index)=>{
+                        data = data + "<p class='service'>" + serviceName + "</p>";
+
+                    })
+                    document.getElementById("container").innerHTML = data ;
+
+                 }
+                     };
+                xmlhttp.open("GET","service.json");
+                 xmlhttp.send();
+            }
+        </script>
+    </head>
+    <body onload="home()">
+        <header>
+            <button onclick="home()"> My Home</button>
+            <button onclick="education()"> My Education</button>
+            <button onclick="skill()" > My Skill</button>
+            <button onclick="project()" > My Project</button>
+            <button onclick="experience()"> My Experience</button>
+            <button onclick="service()">Services</button>
+        </header>
+        <section id="container">
+
+        </section>
+        <footer>
+            AJAX - Asynchronous Javascript & XML
+        </footer>
+    </body>
+</html>

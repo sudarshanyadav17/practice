@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #container{
+                margin: 40px auto 40px;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                width: 80%;
+            }
+
+            #container p{
+                font-size: 35px;
+                margin: 20px;
+                color: blue;
+
+            }
+            header{
+                text-align: center;
+                padding: 20px;
+            }
+            button{
+                border: none;
+                padding: 5px 15px 5px;
+            }
+            button:focus{
+                background: red;
+                color: white;
+            }
+        </style>
+
+        <script>
+            class Mytest{
+                constructor(){
+                    this.alluser=['Amir','Akbar','Chinna','Manoj','Sudarshan'];
+                    this.allcity=['Pune','Bangalore','Chennai','Manipur','Vizag'];
+                }
+               
+                user = () =>{
+                    // let alluser=['Amir','Akbar','Chinna','Manoj','Sudarshan']
+                    document.getElementById("title").innerText = "Available User :" + this.alluser.length;
+                    let temp="";
+                    for(let i=0;i<this.alluser.length;i++){
+                        temp = temp +"<p>" + this.alluser[i] +"<br/> <button onclick='object1.deluser("+ i + ")'> Delete User </button> </p>";
+                    }
+                    document.getElementById("container").innerHTML = temp;
+
+                }
+                city = () =>{
+                    document.getElementById("title").innerText = "Available City :" + this.allcity.length;
+                    let temp="";
+                    for(let i=0;i<this.allcity.length;i++){
+                        temp = temp +"<p>" + this.allcity[i] + "<br/> <button onclick='object1.delcity("+ i + ")'> Delete User </button </p>";
+                    }
+                    document.getElementById("container").innerHTML = temp;
+
+                }
+               
+
+                saveuser =()=>{
+                    let newuser = document.getElementById("newrecord").value;
+                    if(newuser==""){
+                        alert("Invalid User Name")
+                    }else{
+                        this.alluser.push( newuser );
+                    document.getElementById("newrecord").value = "";
+                    this.user(); // to reload the list
+                    }
+                   
+                }
+
+                savecity =()=>{
+                    let newcity = document.getElementById("newrecord").value;
+                    this.allcity.push( newcity );
+                    document.getElementById("newrecord").value = "";
+                    this.city(); // to reload the list
+                }
+
+                deluser =(index) =>{
+                    this.alluser.splice(index,1);
+                    this.user();// to reload the list
+                }
+                delcity =(index)=>{
+                    this.allcity.splice(index,1);
+                    this.city();// to reload the list
+                }
+
+            }
+
+            const object1 = new Mytest();// object creation
+        </script>
+    </head>
+    <body onload="object1.user()">
+        <header>
+        <h1> How to create class in javascript ?</h1>
+
+        Enter New Record:<input type="text" id="newrecord"/>
+        <button onclick="object1.saveuser()"> Save in User</button>
+        <button onclick="object1.savecity()"> Save in City</button>
+
+        <button onclick="object1.user()"> User List</button>
+        <button onclick="object1.city()"> City List</button>
+        
+    </header>
+        <h1 align="center" id="title"></h1>
+        <div id="container"></div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+             const save=()=>{
+                let bname=document.getElementById("bname").value;
+                let price=document.getElementById("bprice").value;
+                // let seller=document.getElementById("seller").value;
+                let qty=document.getElementById("bqty").value
+              
+
+                let url = "http://localhost:1234/booklist";
+                let newbook = {bookname:bname, price:price,qty:qty};
+                let postData ={
+                    headers:{'content-type':'application/json'},
+                    method:'POST',
+                    body:JSON.stringify(newbook)
+                }
+
+                fetch(url, postData)
+                .then(response=>response.json())
+                .then(empinfo=>{
+                    alert("New Book Saved Successfully !");
+                })
+
+            }
+        </script>
+    </head>
+    <body>
+        <table align="center" cellpadding="15">
+            <caption>
+                <h1> Enter Book Details</h1>
+            </caption>
+            <tr>
+                <th>Book Name</th>
+                <td><input type="text" id="bname"/></td>
+            </tr>
+            <tr>
+                <th>Book Price</th>
+                <td><input type="text" id="bprice"/></td>
+            </tr>
+            <tr>
+                <th>Book quantity</th>
+                <td><input type="text" id="bqty"></td>
+            </tr>
+            <!-- <tr>
+                <th>Book Seller</th>
+                <td><input type="text" id="seller"/></td>
+            </tr>
+         -->
+           <tr>
+            <th colspan="2">
+                <button onclick="save()">Save Book</button>
+                <hr>
+                <a href="index.html">Back to List</a>
+            </th>
+           </tr>
+
+        </table>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+{
+  "emplist": [
+    {
+      "id": "1",
+      "empname": "Alex",
+      "city": "Bangalore",
+      "salary": "12000",
+      "dept": "HR"
+    },
+    {
+      "id": "49a0",
+      "empname": "asdasdasd",
+      "salary": "4644646464",
+      "city": "sadaddad",
+      "dept": "sdasad"
+    },
+    {
+      "id": "4a1f",
+      "empname": "Sumit Kumar",
+      "salary": "5000",
+      "city": "Mumbai",
+      "dept": "IT"
+    },
+    {
+      "id": "c95e",
+      "empname": "Rajat",
+      "salary": "4523233",
+      "city": "Kerala",
+      "dept": "HR"
+    }
+  ],
+  "booklist": [
+    {
+      "id": "886f",
+      "bookname": "sasdad",
+      "price": "5000",
+      "qty": "2"
+    }
+  ],
+  "ProductList": [
+    {
+      "product": "Laptop",
+      "quantity": "2",
+      "cost": "50000",
+      "color": "Black",
+      "id": "d4e2"
+    },
+    {
+      "id": "eb7b",
+      "product": "asndkaksd",
+      "quantity": "25",
+      "color": "sdnadn",
+      "price": "31313"
+    }
+  ],
+  "companyList": [
+    {
+      "company": "Dell",
+      "branch": "2",
+      "city": "Bangalore",
+      "id": "ce61"
+    },
+    {
+      "id": "7c18",
+      "company": "sadsada",
+      "city": "pune",
+      "branch": "3"
+    }
+  ]
+}

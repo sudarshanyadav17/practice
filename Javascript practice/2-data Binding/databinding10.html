@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const one = () => {
+        let count = prompt("How Many Text Box ?");
+        count = parseInt(count);
+        let all = "<h2> Enter Customer Name </h2>";
+        for (let i = 1; i <= count; i++) {
+          all = all + "<p> Customer Name : <input type='text'/> </p>";
+        }
+
+        document.getElementById("container").innerHTML = all;
+      };
+
+      const two = () => {
+        let city = ["Bangalore", "Pune", "Vizag", "Mumbai", "Chennai"];
+
+        let all = "<h2> Business Location </h2>";
+        for (let i = 0; i < city.length; i++) {
+          all = all + "<p> <input type='checkbox'/> " + city[i] + " </p>";
+        }
+        
+        document.getElementById("container").innerHTML = all;
+      };
+      const three = () => {
+        let city = ["Bangalore", "Pune", "Vizag", "Mumbai", "Chennai"];
+
+        let all = "<h2> Your Current Location </h2>";
+        for (let i = 0; i < city.length; i++) {
+          console.log(all);
+          all =
+               all +
+            "<p> <input type='radio' name='mycity' /> " +
+            city[i] +
+            " </p>";
+        }
+        
+        document.getElementById("container").innerHTML = all ;
+      };
+      const four = () => {
+        // count= parseInt(count);
+        let all = "<h2> Customer Details </h2>";
+        for (let i = 1; i <= 10; i++) {
+          all =
+            all +
+            "<p> <textarea cols='40' row='5' placeholder='Enter Text'></textarea></p>";
+        }
+
+        // let count = prompt("How Many Textarea ?");
+        document.getElementById("container").innerHTML = all;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Create Dynamic Element</h1>
+    <button onclick="one()">Print Text Box</button>
+    <button onclick="two()">Print Check Box</button>
+    <button onclick="three()">Print Radio Button</button>
+    <button onclick="four()">Print Textarea</button>
+    <br />
+    <div id="container"></div>
+  </body>
+</html>

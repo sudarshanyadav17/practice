@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const one=()=>{
+                let n1=document.getElementById("n1").value;
+                let n2=document.getElementById("n2").value;
+                n1 = parseInt(n1);//parseInt() will change the value from string to a number.
+                n2 = parseInt(n2);
+                let n3 = n1 + n2;
+                document.getElementById("result").innerText= "Addition is :" + n3 ;
+
+            }
+            //ParseInt() is only used for addition opertation to overcome concatination issue.
+            const two=()=>{
+                let n1=document.getElementById("n1").value;
+                let n2=document.getElementById("n2").value;
+                // n1 = parseInt(n1);
+                // n2 = parseInt(n2);
+                let n3 = n1 - n2;
+                document.getElementById("result").innerText= "Subtraction is :" + n3 ;
+            }
+
+            const three=()=>{
+                let n1=document.getElementById("n1").value;
+                let n2=document.getElementById("n2").value;
+                // n1 = parseInt(n1);
+                // n2 = parseInt(n2);
+                let n3 = n1 * n2;
+                document.getElementById("result").innerText= "Multipication is :" + n3 ;
+            }
+
+            const four=()=>{
+                let n1=document.getElementById("n1").value;
+                let n2=document.getElementById("n2").value;
+                // n1 = parseInt(n1);  
+                // n2 = parseInt(n2);
+                let n3 = n1 / n2;
+                document.getElementById("result").innerText= "Division is :" + n3 ;
+            }
+
+
+        </script>
+    </head> 
+    <body>
+        <h1 align="center"> Javascript input and output</h1>
+        <center>
+            <p>
+                Number One : <input type="number" id="n1"/>
+                Number Two : <input type="number" id="n2"/>
+
+            </p>
+            <h2 id="result"> 0 </h2>
+            <button onclick="one()"> + </button>
+            <button onclick="two()"> -</button>
+            <button onclick="three()"> *</button>
+            <button onclick="four()"> /</button>
+
+        </center>
+    </body>
+</html>

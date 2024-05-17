@@ -1,0 +1,48 @@
+body{
+    margin: 40px 5% 40px;
+}
+
+header{
+    padding: 20px;
+    text-align: center;
+
+}
+button{
+    padding: 7px 25px 7px;
+    color:blue;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus{
+    background: red;
+    color: white;
+}
+
+#container{
+    text-align: center;
+    padding: 20px;
+
+}
+h1{
+    font-size: 60px;
+    color: orange;
+    margin: 5px;
+}
+
+.three{
+    width: 33.33%;
+   display: inline-block;
+   font-size: 30px;
+   color: blue;
+   text-align: left;
+
+}
+.myblog{
+    width: 45%;
+  margin: 2%;
+  display: inline-block; 
+  text-align: justify;
+  text-transform: capitalize; 
+}

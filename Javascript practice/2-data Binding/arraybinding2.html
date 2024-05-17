@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let itemlist= ["Apple","Banana","Orange","Grapes"]
+            const getItem = (keyword="")=>{
+                // alert( keyword );
+                let data = "";
+                itemlist.map((itemName,index)=>{
+                    if(itemName.toLowerCase().match(keyword.toLowerCase()))
+                    {
+                    data = data + "<tr>";
+                    data = data + "<td>" + (index+1) + "</td>";
+                    data = data + "<td>" + itemName + "</td>";
+                    data = data + "<td> <button onclick='delItem(" + index + ")'>Delete</button> </td>";
+                    data = data + "</tr>";
+                    }
+                })
+                document.getElementById("container").innerHTML = data;
+            }
+
+            const save=()=>{
+                let newItem=document.getElementById("iname").value;
+                itemlist.push(newItem);
+                document.getElementById("iname").value="";
+                getItem();
+                document.getElementById("message").innerText= newItem + " - Added Successfull !";
+            }
+            
+            const delItem=(index)=>{
+                document.getElementById("message").innerText = "Item Deleted Successfully !";
+                getItem();
+
+            }
+        </script>
+    </head>
+    <body onload="getItem()">
+        <h1 align="center"> Javascript Array Add , List , Delete </h1>
+        <p align="center">
+            Enter Item Name : <input type="text" id="iname">
+                
+            <button onclick="save()"> Save </button>
+        </p>
+        <p align="center" id="message"></p>
+        <p align="center" >
+            <input type="text" placeholder= " Search..." onkeyup="getItem(this.value)"/>
+        </p>
+        <table align="center" cellpadding="20" border="1" cellspacing="0" width="50%">
+            
+            <thead>
+                <tr align="left">
+                    <th> Sl No </th>
+                    <th> Item Name</th>
+                    <th> Action</th>
+                </tr>
+            </thead>
+            <tbody id="container">
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
