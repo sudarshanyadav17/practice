@@ -1,0 +1,76 @@
+
+    1. Component in react - 
+        => React Component is just like a function in javascript.
+            but it has two types
+            1. class base - old method
+            2. function based - new and with hooks
+    2. JSX Element 
+        -> All user defined and pre defined tags are called jsx element in react
+
+    3. How to write JSX 
+        JSX = javascript + HTML tags + xml rules. 
+
+    4. Rules of JSX
+        A. If inside a component more than one JSX element are required then 
+            keep under parent jsx Element.
+
+            Example 
+            <section>
+                <h1> Welcome to Xyz</h1>
+                <p> asdadasdsadsadadadsdsad sadada sadasa  asd ddad a aa</p>
+                <p> sada sdah dad adajkdj djakdjk jkjk akjakjdkajkdj k nj</p>
+                <p> sada sdah dad adajkdj djakdjk jkjk akjakjdkajkdj k nj</p>
+            </section>
+
+         B. The parent or child jsx element can be user defined tag also.
+
+            Example
+                <abc>
+            <h1> Welcome to Xyz</h1>
+            <p> asdadasdsadsadadadsdsad sadada sadasa  asd ddad a aa</p>
+            <p> sada sdah dad adajkdj djakdjk jkjk akjakjdkajkdj k nj</p>
+            <p> sada sdah dad adajkdj djakdjk jkjk akjakjdkajkdj k nj</p>
+            </abc>
+
+        C. The parent or child jsx element can be <></> EMPTY Tag also.
+
+              Example
+             <abc>
+            <h1> Welcome to Xyz</h1>
+            <p> asdadasdsadsadadadsdsad sadada sadasa  asd ddad a aa</p>
+            <p> sada sdah dad adajkdj djakdjk jkjk akjakjdkajkdj k nj</p>
+            <p> sada sdah dad adajkdj djakdjk jkjk akjakjdkajkdj k nj</p>
+            </abc>
+        D. The parent or child jsx element can be [] Array also.
+
+              Example
+              [
+                 <h1> Welcome to Xyz</h1>,
+                 <p> asdadasdsadsadadadsdsad sadada sadasa  asd ddad a aa</p>,
+                 <> sada sdah dad adajkdj djakdjk jkjk akjakjdkajkdj k nj</>,
+                 <p> sada sdah dad adajkdj djakdjk jkjk akjakjdkajkdj k nj</p>
+              ]
+
+            But , is required after every tag. last , is optional 
+
+
+        E. The tags which are used to be case sensitive.
+=============================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
