@@ -137,7 +137,7 @@ const TourPlaces = () => {
           return(
             <div className="row mb-4" key={index}>
               <div className="col-lg-3"> <h3> {place.placename} </h3> </div>
-              <div className="col-lg-3"> <img src={place.photo} height="150" width="100%" className="rounded"/> </div>
+              <div className="col-lg-3"> <img src={place.photo} alt="" height="150" width="100%" className="rounded"/> </div>
               <div className="col-lg-3"> <p> {place.about} </p></div>
               <div className="col-lg-3"> <p> {place.history} </p></div>
             </div>
