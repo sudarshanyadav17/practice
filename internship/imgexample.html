@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      img {
+        height: 250px;
+        width: 30%;
+        border: 1px solid grey;
+        border-radius: 5px;
+        box-shadow:1px 5px 5px ;
+        margin:auto;
+      }
+    </style>
+    <script>
+      let picture = ["./water.jpg","./nature.jpg","./penguins_0.jpg", "./2.jpg" ];
+
+      const pickImage = () => {
+        let url = picture[Math.floor(Math.random() * picture.length)];
+        document.getElementById("image_container").src = url;
+      };
+      setInterval(pickImage, 800);
+    </script>
+  </head>
+  <body onload="pickImage()">
+    <div align="center">
+        <img id="image_container" />
+    </div>
+  </body>
+</html>
